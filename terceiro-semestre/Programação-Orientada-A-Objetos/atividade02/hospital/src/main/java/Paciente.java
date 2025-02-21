@@ -41,6 +41,8 @@ public class Paciente {
 
     public void setSenha(String senha) { this.senha = senha; }
 
+    public void cadastrar(){}
+    public void consultar(){}
     public void mostrar() {
         System.out.println("\n\nnome: "+ getNome());
         System.out.println("cpf: "+ getCpf());

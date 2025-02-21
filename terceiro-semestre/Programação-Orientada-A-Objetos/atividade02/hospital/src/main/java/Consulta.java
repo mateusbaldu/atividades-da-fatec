@@ -1,5 +1,3 @@
-import jdk.swing.interop.SwingInterOpUtils;
-
 public class Consulta {
     private String data;
     private String hora;
@@ -64,6 +62,12 @@ public class Consulta {
     public void setHistorico(String historico) {
         this.historico = historico;
     }
+
+    public void marcar(){}
+    public void cancelar(){}
+    public void consultar(){}
+    public void realizar(){}
+    public void atualizar(){}
 
     public void mostrar() {
         System.out.println("\n\ndata: "+ getData());

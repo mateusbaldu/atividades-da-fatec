@@ -33,6 +33,8 @@ public class Receita {
         this.prescritivo = prescritivo;
     }
 
+    public void preescrever(){}
+    public void consultar(){}
     public void mostrar() {
         System.out.println("\n\nconsulta: "+ getConsulta());
         System.out.println("data: "+ getData());

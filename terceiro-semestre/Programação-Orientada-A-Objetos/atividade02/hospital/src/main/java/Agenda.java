@@ -43,6 +43,7 @@ public class Agenda {
         this.paciente = paciente;
     }
 
+    public void consultar(){}
     public void mostrar(){
         System.out.println("\n\nhora: "+ getHora());
         System.out.println("data: "+ getData());

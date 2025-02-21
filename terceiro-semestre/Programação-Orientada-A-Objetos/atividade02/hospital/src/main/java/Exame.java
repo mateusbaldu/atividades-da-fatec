@@ -33,6 +33,8 @@ public class Exame {
         this.prescritivo = prescritivo;
     }
 
+    public void solicitar(){}
+    public void consultar(){}
     public void mostrar() {
         System.out.println("\n\nconsulta: "+ getConsulta());
         System.out.println("data: "+ getData());

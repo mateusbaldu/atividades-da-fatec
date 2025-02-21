@@ -55,6 +55,7 @@ public class Medico {
         this.senha = senha;
     }
 
+    public void acessar(){}
     public void mostrar() {
         System.out.println("\n\nnome: "+ getNome());
         System.out.println("crm: "+ getCrm());
