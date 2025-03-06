@@ -27,7 +27,5 @@ public class Main {
 
         Exame mateusexame = new Exame("20/02 19:00","20/02","prescrever paracetamol 2x dia por 5 dias");
         mateusexame.mostrar();
-
-        Medico claudemir = new Medico("")
     }
 }
