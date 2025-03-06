@@ -13,9 +13,6 @@ public class Main {
         Paciente jose = new Paciente("Jose da Silva","12345698700","11953301234","Masculino",42,"Jose1234");
         jose.mostrar();
 
-        Medico claudemir = new Medico("claudemir souza","CRM/SP 123456","11912345678","ortopedia","claudemir1234");
-        claudemir.mostrar();
-
         Recepcionista luiza = new Recepcionista("luiza rocha","11909876543","22233344455","luiza1234#");
         luiza.mostrar();
 
@@ -30,5 +27,7 @@ public class Main {
 
         Exame mateusexame = new Exame("20/02 19:00","20/02","prescrever paracetamol 2x dia por 5 dias");
         mateusexame.mostrar();
+
+        Medico claudemir = new Medico("")
     }
 }
