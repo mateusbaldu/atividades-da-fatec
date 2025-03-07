@@ -1,16 +1,18 @@
-public class Leitor {
+public class Funcionario {
     private int codigo;
     private String nome;
     private String email;
-    private double telefone;
+    private long telefone;
     private String documento;
+    private String cargo;
 
-    public Leitor(int codigo, String nome, String email, double telefone, String documento) {
+    public Funcionario(int codigo, String nome, String email, long telefone, String documento, String cargo) {
         this.setCodigo(codigo);
         this.setNome(nome);
         this.setEmail(email);
         this.setTelefone(telefone);
         this.setDocumento(documento);
+        this.setCargo(cargo);
     }
 
     public int getCodigo() {
@@ -25,12 +27,16 @@ public class Leitor {
         return email;
     }
 
-    public double getTelefone() {
+    public long getTelefone() {
         return telefone;
     }
 
     public String getDocumento() {
         return documento;
+    }
+
+    public String getCargo() {
+        return cargo;
     }
 
     public void setCodigo(int codigo) {
@@ -45,7 +51,7 @@ public class Leitor {
         this.email = email;
     }
 
-    public void setTelefone(double telefone) {
+    public void setTelefone(long telefone) {
         this.telefone = telefone;
     }
 
@@ -53,8 +59,12 @@ public class Leitor {
         this.documento = documento;
     }
 
-    public void guardar() {}
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     public void carregar() {}
+    public void guardar() {}
     public void listar() {}
 
     public void mostrar() {
@@ -63,5 +73,6 @@ public class Leitor {
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());
         System.out.println("documento: "+getDocumento());
+        System.out.println("cargo: "+getCargo());
     }
 }

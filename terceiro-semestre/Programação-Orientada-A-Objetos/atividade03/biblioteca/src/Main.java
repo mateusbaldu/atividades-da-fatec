@@ -15,6 +15,10 @@ public class Main {
         Reserva turmaDaMonicaUm = new Reserva(3335142,"21/02/2024","21/03/2024","Insira texto");
         turmaDaMonicaUm.mostrar();
 
-        
+        Emprestimo emprestimo = new Emprestimo(3335142, "13/05/2025", "13/06/2025", "22/06/2025", 18.0, "INSIRA TEXTO");
+        emprestimo.mostrar();
+
+        Funcionario miguel = new Funcionario(202502, "Miguel Silva", "miguelficticio@email.com", 912345678, "123.456.789-00", "desenvolvedor");
+        miguel.mostrar();
     }
 }

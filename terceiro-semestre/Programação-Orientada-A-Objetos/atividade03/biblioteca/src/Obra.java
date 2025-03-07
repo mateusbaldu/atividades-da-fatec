@@ -8,13 +8,13 @@ public class Obra {
     private int isbn;
 
     public Obra(int codigo, String autores, String titulo, String editora, int ano, String descritivo, int isbn) {
-        setCodigo(codigo);
-        setAutores(autores);
-        setTitulo(titulo);
-        setEditora(editora);
-        setAno(ano);
-        setDescritivo(descritivo);
-        setIsbn(isbn);
+        this.setCodigo(codigo);
+        this.setAutores(autores);
+        this.setTitulo(titulo);
+        this.setEditora(editora);
+        this.setAno(ano);
+        this.setDescritivo(descritivo);
+        this.setIsbn(isbn);
     }
 
     public int getCodigo() {

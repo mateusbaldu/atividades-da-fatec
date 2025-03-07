@@ -3,8 +3,8 @@ public class CategoriaObra {
     private String tipo;
 
     public CategoriaObra(int codigo, String tipo) {
-        setCodigo(codigo);
-        setTipo(tipo);
+        this.setCodigo(codigo);
+        this.setTipo(tipo);
     }
 
     public int getCodigo() {

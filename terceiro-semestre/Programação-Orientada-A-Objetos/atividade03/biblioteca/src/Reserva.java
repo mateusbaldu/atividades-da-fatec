@@ -5,10 +5,10 @@ public class Reserva {
     private String situacao;
 
     public Reserva(int codigo, String dataReserva, String dataPrevista, String situacao) {
-        setCodigo(codigo);
-        setDataReserva(dataReserva);
-        setDataPrevista(dataPrevista);
-        setSituacao(situacao);
+        this.setCodigo(codigo);
+        this.setDataReserva(dataReserva);
+        this.setDataPrevista(dataPrevista);
+        this.setSituacao(situacao);
     }
 
     public int getCodigo() {
