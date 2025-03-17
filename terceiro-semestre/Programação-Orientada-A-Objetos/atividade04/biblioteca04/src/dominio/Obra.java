@@ -10,13 +10,13 @@ public class Obra {
     private int isbn;
 
     public Obra(int codigo, String autores, String titulo, String editora, int ano, String descritivo, int isbn) {
-        this.setCodigo(codigo);
-        this.setAutores(autores);
-        this.setTitulo(titulo);
-        this.setEditora(editora);
-        this.setAno(ano);
-        this.setDescritivo(descritivo);
-        this.setIsbn(isbn);
+        this.codigo = codigo;
+        this.autores = autores;
+        this.titulo = titulo;
+        this.editora = editora;
+        this.ano = ano;
+        this.descritivo = descritivo;
+        this.isbn = isbn;
     }
 
     public int getCodigo() {

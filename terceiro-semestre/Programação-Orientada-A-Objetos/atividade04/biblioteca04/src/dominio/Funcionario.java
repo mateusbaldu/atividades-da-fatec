@@ -8,13 +8,13 @@ public class Funcionario {
     private String documento;
     private String cargo;
 
-    public Funcionario(int codigo, String nome, String email, long telefone, String documento, String cargo) {
-        this.setCodigo(codigo);
-        this.setNome(nome);
-        this.setEmail(email);
-        this.setTelefone(telefone);
-        this.setDocumento(documento);
-        this.setCargo(cargo);
+    public Funcionario(int codigo, String email, String nome, long telefone, String documento, String cargo) {
+        this.codigo = codigo;
+        this.email = email;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.documento = documento;
+        this.cargo = cargo;
     }
 
     public int getCodigo() {

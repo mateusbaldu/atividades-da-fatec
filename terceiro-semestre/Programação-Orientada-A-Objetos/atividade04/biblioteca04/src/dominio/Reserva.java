@@ -7,10 +7,10 @@ public class Reserva {
     private String situacao;
 
     public Reserva(int codigo, String dataReserva, String dataPrevista, String situacao) {
-        this.setCodigo(codigo);
-        this.setDataReserva(dataReserva);
-        this.setDataPrevista(dataPrevista);
-        this.setSituacao(situacao);
+        this.codigo = codigo;
+        this.dataReserva = dataReserva;
+        this.dataPrevista = dataPrevista;
+        this.situacao = situacao;
     }
 
     public int getCodigo() {

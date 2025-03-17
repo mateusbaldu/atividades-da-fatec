@@ -9,12 +9,12 @@ public class Emprestimo {
     private String situacao;
 
     public Emprestimo(int codigo, String dataEmprestimo, String dataPrevista, String dataDevolvida, double multa, String situacao) {
-        this.setCodigo(codigo);
-        this.setDataEmprestimo(dataEmprestimo);
-        this.setDataPrevista(dataPrevista);
-        this.setDataDevolvida(dataDevolvida);
-        this.setMulta(multa);
-        this.setSituacao(situacao);
+        this.codigo = codigo;
+        this.dataEmprestimo = dataEmprestimo;
+        this.dataPrevista = dataPrevista;
+        this.dataDevolvida = dataDevolvida;
+        this.multa = multa;
+        this.situacao = situacao;
     }
 
     public int getCodigo() {

@@ -7,12 +7,12 @@ public class Leitor {
     private double telefone;
     private String documento;
 
-    public Leitor(int codigo, String nome, String email, double telefone, String documento) {
-        this.setCodigo(codigo);
-        this.setNome(nome);
-        this.setEmail(email);
-        this.setTelefone(telefone);
-        this.setDocumento(documento);
+    public Leitor(int codigo, String email, String nome, double telefone, String documento) {
+        this.codigo = codigo;
+        this.email = email;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.documento = documento;
     }
 
     public int getCodigo() {

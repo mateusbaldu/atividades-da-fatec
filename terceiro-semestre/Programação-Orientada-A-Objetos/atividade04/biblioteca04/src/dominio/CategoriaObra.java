@@ -5,8 +5,8 @@ public class CategoriaObra {
     private String tipo;
 
     public CategoriaObra(int codigo, String tipo) {
-        this.setCodigo(codigo);
-        this.setTipo(tipo);
+        this.codigo = codigo;
+        this.tipo = tipo;
     }
 
     public int getCodigo() {

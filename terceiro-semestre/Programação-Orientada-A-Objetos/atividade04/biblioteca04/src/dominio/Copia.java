@@ -6,9 +6,9 @@ public class Copia {
     private String descritivo;
 
     public Copia(int codigo, String situação, String descritivo) {
-        this.setCodigo(codigo);
-        this.setSituação(situação);
-        this.setDescritivo(descritivo);
+        this.codigo = codigo;
+        this.situação = situação;
+        this.descritivo = descritivo;
     }
 
     public int getCodigo() {
