@@ -1,3 +1,5 @@
+package dominio;
+
 public class CategoriaObra {
     private int codigo;
     private String tipo;

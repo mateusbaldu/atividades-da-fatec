@@ -1,3 +1,5 @@
+package dominio;
+
 public class Reserva {
     private int codigo;
     private String dataReserva;

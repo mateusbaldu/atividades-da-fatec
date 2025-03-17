@@ -1,3 +1,5 @@
+package dominio;
+
 public class Emprestimo {
     private int codigo;
     private String dataEmprestimo;

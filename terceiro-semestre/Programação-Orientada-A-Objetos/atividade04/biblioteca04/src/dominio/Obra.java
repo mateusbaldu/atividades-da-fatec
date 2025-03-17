@@ -1,3 +1,5 @@
+package dominio;
+
 public class Obra {
     private int codigo;
     private String autores;

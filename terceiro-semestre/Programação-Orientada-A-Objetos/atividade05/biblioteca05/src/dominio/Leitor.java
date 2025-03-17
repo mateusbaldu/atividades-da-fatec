@@ -1,18 +1,18 @@
-public class Funcionario {
+package dominio;
+
+public class Leitor {
     private int codigo;
     private String nome;
     private String email;
-    private long telefone;
+    private double telefone;
     private String documento;
-    private String cargo;
 
-    public Funcionario(int codigo, String nome, String email, long telefone, String documento, String cargo) {
+    public Leitor(int codigo, String nome, String email, double telefone, String documento) {
         this.setCodigo(codigo);
         this.setNome(nome);
         this.setEmail(email);
         this.setTelefone(telefone);
         this.setDocumento(documento);
-        this.setCargo(cargo);
     }
 
     public int getCodigo() {
@@ -27,16 +27,12 @@ public class Funcionario {
         return email;
     }
 
-    public long getTelefone() {
+    public double getTelefone() {
         return telefone;
     }
 
     public String getDocumento() {
         return documento;
-    }
-
-    public String getCargo() {
-        return cargo;
     }
 
     public void setCodigo(int codigo) {
@@ -51,7 +47,7 @@ public class Funcionario {
         this.email = email;
     }
 
-    public void setTelefone(long telefone) {
+    public void setTelefone(double telefone) {
         this.telefone = telefone;
     }
 
@@ -59,12 +55,8 @@ public class Funcionario {
         this.documento = documento;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
-    public void carregar() {}
     public void guardar() {}
+    public void carregar() {}
     public void listar() {}
 
     public void mostrar() {
@@ -73,6 +65,5 @@ public class Funcionario {
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());
         System.out.println("documento: "+getDocumento());
-        System.out.println("cargo: "+getCargo());
     }
 }

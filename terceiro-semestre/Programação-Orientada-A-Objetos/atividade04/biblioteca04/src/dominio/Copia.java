@@ -1,3 +1,5 @@
+package dominio;
+
 public class Copia {
     private int codigo;
     private String situação;
