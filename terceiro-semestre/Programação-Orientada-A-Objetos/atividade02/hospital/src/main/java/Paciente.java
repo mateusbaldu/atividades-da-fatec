@@ -6,8 +6,6 @@ public class Paciente {
     private int idade;
     private String senha;
 
-    public Paciente(){}
-
     public Paciente(String nome, String cpf, String telefone, String genero, int idade, String senha) {
         setNome(nome);
         setCpf(cpf);

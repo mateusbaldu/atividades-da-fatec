@@ -1,13 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Paciente maria = new Paciente();
-        maria.setNome("Maria da Silva");
-        maria.setCpf("12345678900");
-        maria.setGenero("Feminino");
-        maria.setTelefone("11940028922");
-        maria.setIdade(45);
-        maria.setSenha("Maria1234");
-
+        Paciente maria = new Paciente("Maria da Silva", "12345678900", "11940028922", "Feminino", 45, "Maria1234");
         maria.mostrar();
 
         Paciente jose = new Paciente("Jose da Silva","12345698700","11953301234","Masculino",42,"Jose1234");
