@@ -4,17 +4,17 @@ public class Funcionario {
     private int codigo;
     private String nome;
     private String email;
-    private long telefone;
+    private String telefone;
     private String documento;
     private String cargo;
 
-    public Funcionario(int codigo, String email, String nome, long telefone, String documento, String cargo) {
-        this.codigo = codigo;
-        this.email = email;
-        this.nome = nome;
-        this.telefone = telefone;
-        this.documento = documento;
-        this.cargo = cargo;
+    public Funcionario(int codigo, String email, String nome, String telefone, String documento, String cargo) throws Exception{
+        this.setCodigo(codigo);
+        this.setEmail(email);
+        this.setNome(nome);
+        this.setTelefone(telefone);
+        this.setDocumento(documento);
+        this.setCargo(cargo);
     }
 
     public int getCodigo() {
@@ -29,7 +29,7 @@ public class Funcionario {
         return email;
     }
 
-    public long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
@@ -41,28 +41,51 @@ public class Funcionario {
         return cargo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(int codigo) throws Exception{
+        if (codigo <= 0) {
+            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+        }
         this.codigo = codigo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception{
+        if (nome == null || nome.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.nome = nome;
+        }
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws Exception{
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.email = email;
+        }
     }
 
-    public void setTelefone(long telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone) throws Exception{
+        if (telefone == null || telefone.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.telefone = telefone;
+        }
     }
 
-    public void setDocumento(String documento) {
-        this.documento = documento;
+    public void setDocumento(String documento) throws Exception{
+        if (documento == null || documento.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.documento = documento;
+        }
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setCargo(String cargo) throws Exception{
+        if (cargo == null || cargo.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.cargo = cargo;
+        }
     }
 
     public void carregar() {}

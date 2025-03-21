@@ -8,13 +8,13 @@ public class Emprestimo {
     private double multa;
     private String situacao;
 
-    public Emprestimo(int codigo, String dataEmprestimo, String dataPrevista, String dataDevolvida, double multa, String situacao) {
-        this.codigo = codigo;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataPrevista = dataPrevista;
-        this.dataDevolvida = dataDevolvida;
-        this.multa = multa;
-        this.situacao = situacao;
+    public Emprestimo(int codigo, String dataEmprestimo, String dataPrevista, String dataDevolvida, double multa, String situacao) throws Exception{
+        this.setCodigo(codigo);
+        this.setDataEmprestimo(dataEmprestimo);
+        this.setDataPrevista(dataPrevista);
+        this.setDataDevolvida(dataDevolvida);
+        this.setMulta(multa);
+        this.setSituacao(situacao);
     }
 
     public int getCodigo() {
@@ -41,28 +41,51 @@ public class Emprestimo {
         return situacao;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(int codigo) throws Exception{
+        if (codigo <= 0) {
+            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+        }
         this.codigo = codigo;
     }
 
     public void setDataEmprestimo(String dataEmprestimo) {
-        this.dataEmprestimo = dataEmprestimo;
+        if (dataEmprestimo == null || dataEmprestimo.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.dataEmprestimo = dataEmprestimo;
+        }
     }
 
-    public void setDataPrevista(String dataPrevista) {
-        this.dataPrevista = dataPrevista;
+    public void setDataPrevista(String dataPrevista) throws Exception{
+        if (dataPrevista == null || dataPrevista.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.dataPrevista = dataPrevista;
+        }
     }
 
-    public void setDataDevolvida(String dataDevolvida) {
-        this.dataDevolvida = dataDevolvida;
+    public void setDataDevolvida(String dataDevolvida) throws Exception{
+        if (dataDevolvida == null || dataDevolvida.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.dataDevolvida = dataDevolvida;
+        }
     }
 
-    public void setMulta(double multa) {
-        this.multa = multa;
+    public void setMulta(double multa) throws Exception{
+        if (multa < 0) {
+            throw new IllegalArgumentException("Erro! O valor da multa não pode ser negativo");
+        } else {
+            this.multa = multa;
+        }
     }
 
     public void setSituacao(String situacao) {
-        this.situacao = situacao;
+        if (situacao == null || situacao.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.situacao = situacao;
+        }
     }
 
     public void cadastrar() {}

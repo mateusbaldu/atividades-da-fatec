@@ -9,14 +9,14 @@ public class Obra {
     private String descritivo;
     private int isbn;
 
-    public Obra(int codigo, String autores, String titulo, String editora, int ano, String descritivo, int isbn) {
-        this.codigo = codigo;
-        this.autores = autores;
-        this.titulo = titulo;
-        this.editora = editora;
-        this.ano = ano;
-        this.descritivo = descritivo;
-        this.isbn = isbn;
+    public Obra(int codigo, String autores, String titulo, String editora, int ano, String descritivo, int isbn) throws Exception{
+        this.setCodigo(codigo);
+        this.setAutores(autores);
+        this.setTitulo(titulo);
+        this.setEditora(editora);
+        this.setAno(ano);
+        this.setDescritivo(descritivo);
+        this.setIsbn(isbn);
     }
 
     public int getCodigo() {
@@ -47,32 +47,58 @@ public class Obra {
         return isbn;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(int codigo) throws Exception{
+        if (codigo <= 0) {
+            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+        }
         this.codigo = codigo;
     }
 
-    public void setAutores(String autores) {
+    public void setAutores(String autores) throws Exception{
+        if (autores == null || autores.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        }
         this.autores = autores;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitulo(String titulo) throws Exception{
+        if (titulo == null || titulo.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.titulo = titulo;
+        }
     }
 
-    public void setEditora(String editora) {
-        this.editora = editora;
+    public void setEditora(String editora) throws Exception{
+        if (editora == null || editora.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.editora = editora;
+        }
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setAno(int ano) throws Exception{
+        if (ano <= 0) {
+            throw new IllegalArgumentException("Erro! O ano não pode ser zero ou negativo");
+        } else {
+            this.ano = ano;
+        }
     }
 
-    public void setDescritivo(String descritivo) {
-        this.descritivo = descritivo;
+    public void setDescritivo(String descritivo) throws Exception{
+        if (editora == null || editora.isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        } else {
+            this.descritivo = descritivo;
+        }
     }
 
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
+    public void setIsbn(int isbn) throws Exception{
+        if (isbn <= 0) {
+            throw new IllegalArgumentException("Erro! O isbn não pode ser zero ou negativo");
+        } else {
+            this.isbn = isbn;
+        }
     }
 
     public void guardar() {}
