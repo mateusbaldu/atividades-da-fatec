@@ -51,7 +51,8 @@ public class Emprestimo {
     }
 
     public void setDataEmprestimo(LocalDate dataEmprestimo) {
-        if (dataEmprestimo == null) {
+        LocalDate dataInicial = LocalDate.of(0,0,0);
+        if (dataEmprestimo == null || dataEmprestimo.isBefore(dataInicial)) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataEmprestimo = dataEmprestimo;
@@ -59,7 +60,8 @@ public class Emprestimo {
     }
 
     public void setDataPrevista(LocalDate dataPrevista) throws Exception{
-        if (dataPrevista == null) {
+        LocalDate dataInicial = LocalDate.of(0,0,0);
+        if (dataPrevista == null || dataPrevista.isBefore(dataInicial)) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataPrevista = dataPrevista;
@@ -67,7 +69,8 @@ public class Emprestimo {
     }
 
     public void setDataDevolvida(LocalDate dataDevolvida) throws Exception{
-        if (dataDevolvida == null) {
+        LocalDate dataInicial = LocalDate.of(0,0,0);
+        if (dataDevolvida == null || dataDevolvida.isBefore(dataInicial)) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataDevolvida = dataDevolvida;

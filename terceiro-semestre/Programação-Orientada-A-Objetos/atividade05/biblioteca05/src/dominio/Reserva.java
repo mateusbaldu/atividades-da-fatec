@@ -39,16 +39,17 @@ public class Reserva {
     }
 
     public void setDataReserva(LocalDate dataReserva) throws Exception{
-        if (dataReserva == null) {
+        LocalDate dataInicial = LocalDate.of(0,0,0);
+        if (dataReserva == null || dataReserva.isBefore(dataInicial)) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataReserva = dataReserva;
         }
     }
 
-
     public void setDataPrevista(LocalDate dataPrevista) throws Exception{
-        if (dataPrevista == null) {
+        LocalDate dataInicial = LocalDate.of(0,0,0);
+        if (dataPrevista == null || dataPrevista.isBefore(dataInicial)) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataPrevista = dataPrevista;
