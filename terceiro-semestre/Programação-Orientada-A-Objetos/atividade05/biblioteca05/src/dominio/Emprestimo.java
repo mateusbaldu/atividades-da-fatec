@@ -1,14 +1,16 @@
 package dominio;
 
+import java.time.LocalDate;
+
 public class Emprestimo {
     private int codigo;
-    private String dataEmprestimo;
-    private String dataPrevista;
-    private String dataDevolvida;
+    private LocalDate dataEmprestimo;
+    private LocalDate dataPrevista;
+    private LocalDate dataDevolvida;
     private double multa;
     private String situacao;
 
-    public Emprestimo(int codigo, String dataEmprestimo, String dataPrevista, String dataDevolvida, double multa, String situacao) throws Exception{
+    public Emprestimo(int codigo, LocalDate dataEmprestimo, LocalDate dataPrevista, LocalDate dataDevolvida, double multa, String situacao) throws Exception{
         this.setCodigo(codigo);
         this.setDataEmprestimo(dataEmprestimo);
         this.setDataPrevista(dataPrevista);
@@ -21,15 +23,15 @@ public class Emprestimo {
         return codigo;
     }
 
-    public String getDataEmprestimo() {
+    public LocalDate getDataEmprestimo() {
         return dataEmprestimo;
     }
 
-    public String getDataPrevista() {
+    public LocalDate getDataPrevista() {
         return dataPrevista;
     }
 
-    public String getDataDevolvida() {
+    public LocalDate getDataDevolvida() {
         return dataDevolvida;
     }
 
@@ -48,24 +50,24 @@ public class Emprestimo {
         this.codigo = codigo;
     }
 
-    public void setDataEmprestimo(String dataEmprestimo) {
-        if (dataEmprestimo == null || dataEmprestimo.isEmpty()) {
+    public void setDataEmprestimo(LocalDate dataEmprestimo) {
+        if (dataEmprestimo == null) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataEmprestimo = dataEmprestimo;
         }
     }
 
-    public void setDataPrevista(String dataPrevista) throws Exception{
-        if (dataPrevista == null || dataPrevista.isEmpty()) {
+    public void setDataPrevista(LocalDate dataPrevista) throws Exception{
+        if (dataPrevista == null) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataPrevista = dataPrevista;
         }
     }
 
-    public void setDataDevolvida(String dataDevolvida) throws Exception{
-        if (dataDevolvida == null || dataDevolvida.isEmpty()) {
+    public void setDataDevolvida(LocalDate dataDevolvida) throws Exception{
+        if (dataDevolvida == null) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataDevolvida = dataDevolvida;

@@ -1,12 +1,14 @@
 package dominio;
 
+import java.time.LocalDate;
+
 public class Reserva {
     private int codigo;
-    private String dataReserva;
-    private String dataPrevista;
+    private LocalDate dataReserva;
+    private LocalDate dataPrevista;
     private String situacao;
 
-    public Reserva(int codigo, String dataReserva, String dataPrevista, String situacao) throws Exception{
+    public Reserva(int codigo, LocalDate dataReserva, LocalDate dataPrevista, String situacao) throws Exception{
         this.setCodigo(codigo);
         this.setDataReserva(dataReserva);
         this.setDataPrevista(dataPrevista);
@@ -17,11 +19,11 @@ public class Reserva {
         return codigo;
     }
 
-    public String getDataReserva() {
+    public LocalDate getDataReserva() {
         return dataReserva;
     }
 
-    public String getDataPrevista() {
+    public LocalDate getDataPrevista() {
         return dataPrevista;
     }
 
@@ -36,8 +38,8 @@ public class Reserva {
         this.codigo = codigo;
     }
 
-    public void setDataReserva(String dataReserva) throws Exception{
-        if (dataReserva == null || dataReserva.isEmpty()) {
+    public void setDataReserva(LocalDate dataReserva) throws Exception{
+        if (dataReserva == null) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataReserva = dataReserva;
@@ -45,8 +47,8 @@ public class Reserva {
     }
 
 
-    public void setDataPrevista(String dataPrevista) throws Exception{
-        if (dataPrevista == null || dataPrevista.isEmpty()) {
+    public void setDataPrevista(LocalDate dataPrevista) throws Exception{
+        if (dataPrevista == null) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataPrevista = dataPrevista;
