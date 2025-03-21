@@ -1,10 +1,10 @@
 package dominio;
 
-public class CategoriaObra {
+public class CategoriaLeitor {
     private int codigo;
     private String tipo;
 
-    public CategoriaObra(int codigo, String tipo) throws Exception{
+    public CategoriaLeitor(int codigo, String tipo) throws Exception{
         this.setCodigo(codigo);
         this.setTipo(tipo);
     }
