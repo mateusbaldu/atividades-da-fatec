@@ -3,14 +3,14 @@ package dominio;
 import java.time.LocalDate;
 
 public class Reserva {
-    private int codigo;
+    private Integer codigo;
     private LocalDate dataReserva;
     private LocalDate dataPrevista;
     private String situacao;
     private Leitor codigoLeitor;
     private Obra codigoObra;
 
-    public Reserva(int codigo, LocalDate dataReserva, LocalDate dataPrevista,
+    public Reserva(Integer codigo, LocalDate dataReserva, LocalDate dataPrevista,
                    String situacao, Leitor codigoLeitor, Obra codigoObra) throws Exception{
         this.setCodigo(codigo);
         this.setDataReserva(dataReserva);
@@ -22,7 +22,7 @@ public class Reserva {
 
     public Reserva(){}
 
-    public int getCodigo() {
+    public Integer getCodigo() {
         return codigo;
     }
 
@@ -46,7 +46,7 @@ public class Reserva {
         return codigoObra;
     }
 
-    public void setCodigo(int codigo) throws Exception{
+    public void setCodigo(Integer codigo) throws Exception{
         if (codigo <= 0) {
             throw new Exception("Erro! O código não pode ser negativo ou zero");
         }

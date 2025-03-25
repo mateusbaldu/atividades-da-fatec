@@ -8,11 +8,11 @@ public class Funcionario {
     private String documento;
     private String cargo;
 
-    public Funcionario(int codigo, String email, String nome, String telefone,
+    public Funcionario(int codigo, String nome, String email, String telefone,
                        String documento, String cargo) throws Exception{
         this.setCodigo(codigo);
-        this.setEmail(email);
         this.setNome(nome);
+        this.setEmail(email);
         this.setTelefone(telefone);
         this.setDocumento(documento);
         this.setCargo(cargo);
