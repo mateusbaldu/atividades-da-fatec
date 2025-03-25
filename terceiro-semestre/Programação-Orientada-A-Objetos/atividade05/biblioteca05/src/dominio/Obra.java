@@ -8,8 +8,11 @@ public class Obra {
     private int ano;
     private String descritivo;
     private int isbn;
+    private CategoriaObra codigoCategoriaObra;
 
-    public Obra(int codigo, String autores, String titulo, String editora, int ano, String descritivo, int isbn) throws Exception{
+    public Obra(int codigo, String autores, String titulo,
+                String editora, int ano, String descritivo,
+                int isbn, CategoriaObra codigoCategoriaObra) throws Exception{
         this.setCodigo(codigo);
         this.setAutores(autores);
         this.setTitulo(titulo);
@@ -17,7 +20,10 @@ public class Obra {
         this.setAno(ano);
         this.setDescritivo(descritivo);
         this.setIsbn(isbn);
+        this.setCodigoCategoriaObra(codigoCategoriaObra);
     }
+
+    public Obra(){}
 
     public int getCodigo() {
         return codigo;
@@ -47,23 +53,27 @@ public class Obra {
         return isbn;
     }
 
+    public CategoriaObra getCodigoCategoriaObra() {
+        return codigoCategoriaObra;
+    }
+
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
-            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+            throw new Exception("Erro! O código não pode ser negativo ou zero");
         }
         this.codigo = codigo;
     }
 
     public void setAutores(String autores) throws Exception{
         if (autores == null || autores.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         }
         this.autores = autores;
     }
 
     public void setTitulo(String titulo) throws Exception{
         if (titulo == null || titulo.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.titulo = titulo;
         }
@@ -71,7 +81,7 @@ public class Obra {
 
     public void setEditora(String editora) throws Exception{
         if (editora == null || editora.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.editora = editora;
         }
@@ -79,7 +89,7 @@ public class Obra {
 
     public void setAno(int ano) throws Exception{
         if (ano <= 0) {
-            throw new IllegalArgumentException("Erro! O ano não pode ser zero ou negativo");
+            throw new Exception("Erro! O ano não pode ser zero ou negativo");
         } else {
             this.ano = ano;
         }
@@ -87,7 +97,7 @@ public class Obra {
 
     public void setDescritivo(String descritivo) throws Exception{
         if (editora == null || editora.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.descritivo = descritivo;
         }
@@ -95,9 +105,17 @@ public class Obra {
 
     public void setIsbn(int isbn) throws Exception{
         if (isbn <= 0) {
-            throw new IllegalArgumentException("Erro! O isbn não pode ser zero ou negativo");
+            throw new Exception("Erro! O isbn não pode ser zero ou negativo");
         } else {
             this.isbn = isbn;
+        }
+    }
+
+    public void setCodigoCategoriaObra(CategoriaObra codigoCategoriaObra) throws Exception{
+        if (codigoCategoriaObra.getCodigo() <= 0) {
+            throw new Exception("Erro! O código da categoria da obra não pode ser negativo ou zero");
+        }else {
+            this.codigoCategoriaObra = codigoCategoriaObra;
         }
     }
 

@@ -9,15 +9,25 @@ public class Emprestimo {
     private LocalDate dataDevolvida;
     private double multa;
     private String situacao;
+    private Copia codigoCopia;
+    private Leitor codigoLeitor;
+    private Funcionario codigoFuncionario;
 
-    public Emprestimo(int codigo, LocalDate dataEmprestimo, LocalDate dataPrevista, LocalDate dataDevolvida, double multa, String situacao) throws Exception{
+    public Emprestimo(int codigo, LocalDate dataEmprestimo, LocalDate dataPrevista,
+                      LocalDate dataDevolvida, double multa, String situacao,
+                      Copia codigoCopia, Leitor codigoLeitor, Funcionario codigoFuncionario) throws Exception{
         this.setCodigo(codigo);
         this.setDataEmprestimo(dataEmprestimo);
         this.setDataPrevista(dataPrevista);
         this.setDataDevolvida(dataDevolvida);
         this.setMulta(multa);
         this.setSituacao(situacao);
+        this.setCodigoCopia(codigoCopia);
+        this.setCodigoLeitor(codigoLeitor);
+        this.setCodigoFuncionario(codigoFuncionario);
     }
+
+    public Emprestimo(){}
 
     public int getCodigo() {
         return codigo;
@@ -43,35 +53,44 @@ public class Emprestimo {
         return situacao;
     }
 
+    public Funcionario getCodigoFuncionario() {
+        return codigoFuncionario;
+    }
+
+    public Leitor getCodigoLeitor() {
+        return codigoLeitor;
+    }
+
+    public Copia getCodigoCopia() {
+        return codigoCopia;
+    }
+
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
-            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+            throw new Exception("Erro! O código não pode ser negativo ou zero");
         }
         this.codigo = codigo;
     }
 
-    public void setDataEmprestimo(LocalDate dataEmprestimo) {
-        LocalDate dataInicial = LocalDate.of(0,0,0);
-        if (dataEmprestimo == null || dataEmprestimo.isBefore(dataInicial)) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+    public void setDataEmprestimo(LocalDate dataEmprestimo) throws Exception{
+        if (dataEmprestimo == null) {
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataEmprestimo = dataEmprestimo;
         }
     }
 
     public void setDataPrevista(LocalDate dataPrevista) throws Exception{
-        LocalDate dataInicial = LocalDate.of(0,0,0);
-        if (dataPrevista == null || dataPrevista.isBefore(dataInicial)) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        if (dataPrevista == null) {
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataPrevista = dataPrevista;
         }
     }
 
     public void setDataDevolvida(LocalDate dataDevolvida) throws Exception{
-        LocalDate dataInicial = LocalDate.of(0,0,0);
-        if (dataDevolvida == null || dataDevolvida.isBefore(dataInicial)) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        if (dataDevolvida == null) {
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.dataDevolvida = dataDevolvida;
         }
@@ -79,17 +98,41 @@ public class Emprestimo {
 
     public void setMulta(double multa) throws Exception{
         if (multa < 0) {
-            throw new IllegalArgumentException("Erro! O valor da multa não pode ser negativo");
+            throw new Exception("Erro! O valor da multa não pode ser negativo");
         } else {
             this.multa = multa;
         }
     }
 
-    public void setSituacao(String situacao) {
+    public void setSituacao(String situacao) throws Exception{
         if (situacao == null || situacao.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.situacao = situacao;
+        }
+    }
+
+    public void setCodigoCopia(Copia codigoCopia) throws Exception{
+        if (codigoCopia.getCodigo() <= 0) {
+            throw new Exception("Erro! O código da cópia não pode ser negativo ou zero");
+        } else {
+            this.codigoCopia = codigoCopia;
+        }
+    }
+
+    public void setCodigoLeitor(Leitor codigoLeitor) throws Exception{
+        if (codigoLeitor.getCodigo() <= 0) {
+            throw new Exception("Erro! O código do leitor não pode ser negativo ou zero");
+        } else {
+            this.codigoLeitor = codigoLeitor;
+        }
+    }
+
+    public void setCodigoFuncionario(Funcionario codigoFuncionario) throws Exception{
+        if (codigoFuncionario.getCodigo() <= 0) {
+            throw new Exception("Erro! O código do funcionário não pode ser negativo ou zero");
+        } else {
+            this.codigoFuncionario = codigoFuncionario;
         }
     }
 

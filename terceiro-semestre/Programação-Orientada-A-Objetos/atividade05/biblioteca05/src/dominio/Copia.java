@@ -4,12 +4,16 @@ public class Copia {
     private int codigo;
     private String situacao;
     private String descritivo;
+    public Obra codigoObra;
 
-    public Copia(int codigo, String situacao, String descritivo) throws Exception{
+    public Copia(int codigo, String situacao, String descritivo, Obra codigoObra) throws Exception{
         this.setCodigo(codigo);
         this.setSituacao(situacao);
         this.setDescritivo(descritivo);
+        this.setCodigoObra(codigoObra);
     }
+
+    public Copia() {}
 
     public int getCodigo() {
         return codigo;
@@ -23,16 +27,20 @@ public class Copia {
         return descritivo;
     }
 
+    public Obra getCodigoObra() {
+        return codigoObra;
+    }
+
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
-            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+            throw new Exception("Erro! O código não pode ser negativo ou zero");
         }
         this.codigo = codigo;
     }
 
     public void setSituacao(String situacao) throws Exception{
         if (situacao == null || situacao.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.situacao = situacao;
         }
@@ -40,10 +48,17 @@ public class Copia {
 
     public void setDescritivo(String descritivo) throws Exception{
         if (descritivo == null || descritivo.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.descritivo = descritivo;
         }
+    }
+
+    public void setCodigoObra(Obra codigoObra) throws Exception{
+        if (codigoObra.getCodigo() <= 0) {
+            throw new Exception("Erro! O codigo da obra não pode ser negativo ou zero");
+        }
+        this.codigoObra = codigoObra;
     }
 
     public void guardar() {}

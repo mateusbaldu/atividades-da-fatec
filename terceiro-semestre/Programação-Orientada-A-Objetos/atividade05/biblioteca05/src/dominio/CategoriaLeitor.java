@@ -9,6 +9,9 @@ public class CategoriaLeitor {
         this.setTipo(tipo);
     }
 
+    public CategoriaLeitor() {
+    }
+
     public int getCodigo() {
         return codigo;
     }
@@ -19,7 +22,7 @@ public class CategoriaLeitor {
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
-            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+            throw new Exception("Erro! O código não pode ser negativo ou zero");
         } else {
             this.codigo = codigo;
         }
@@ -27,7 +30,7 @@ public class CategoriaLeitor {
 
     public void setTipo(String tipo) throws Exception{
         if (tipo == null || tipo.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.tipo = tipo;
         }

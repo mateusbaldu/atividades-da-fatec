@@ -6,14 +6,19 @@ public class Leitor {
     private String email;
     private String telefone;
     private String documento;
+    private CategoriaLeitor categoriaLeitor;
 
-    public Leitor(int codigo, String email, String nome, String telefone, String documento) throws Exception{
+    public Leitor(int codigo, String nome, String email, String telefone,
+                  String documento, CategoriaLeitor categoriaLeitor) throws Exception{
         this.setCodigo(codigo);
         this.setEmail(email);
         this.setNome(nome);
         this.setTelefone(telefone);
         this.setDocumento(documento);
+        this.setCategoriaLeitor(categoriaLeitor);
     }
+
+    public Leitor(){}
 
     public int getCodigo() {
         return codigo;
@@ -35,16 +40,20 @@ public class Leitor {
         return documento;
     }
 
+    public CategoriaLeitor getCategoriaLeitor() {
+        return categoriaLeitor;
+    }
+
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
-            throw new IllegalArgumentException("Erro! O código não pode ser negativo ou zero");
+            throw new Exception("Erro! O código não pode ser negativo ou zero");
         }
         this.codigo = codigo;
     }
 
     public void setNome(String nome) throws Exception{
         if (nome == null || nome.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.nome = nome;
         }
@@ -52,7 +61,7 @@ public class Leitor {
 
     public void setEmail(String email) throws Exception{
         if (email == null || email.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.email = email;
         }
@@ -60,7 +69,7 @@ public class Leitor {
 
     public void setTelefone(String telefone) throws Exception{
         if (telefone == null || telefone.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.telefone = telefone;
         }
@@ -68,11 +77,20 @@ public class Leitor {
 
     public void setDocumento(String documento) throws Exception{
         if (documento == null || documento.isEmpty()) {
-            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+            throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.documento = documento;
         }
     }
+
+    public void setCategoriaLeitor(CategoriaLeitor categoriaLeitor) throws Exception{
+        if (categoriaLeitor == null) {
+            throw new Exception("Erro! A categoria do leitor não pode ser vazio ou zero");
+        } else {
+            this.categoriaLeitor = categoriaLeitor;
+        }
+    }
+
     public void guardar() {}
     public void carregar() {}
     public void listar() {}
