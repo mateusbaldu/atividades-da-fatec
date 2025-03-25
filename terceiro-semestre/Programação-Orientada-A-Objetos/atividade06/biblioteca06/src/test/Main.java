@@ -1,7 +1,6 @@
 package test;
 
 import dominio.*;
-
 import java.time.LocalDate;
 
 public class Main {
