@@ -40,14 +40,12 @@ public class Main {
                     18.0, "INSIRA TEXTO", turmaDaMonica, Mateus, Miguel);
             emprestimo.mostrar();
 
-            System.out.println();
-            System.out.println("Algoritmo encerrado!");
+            System.out.println("\nAlgoritmo encerrado!");
 
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            System.out.println();
-            System.out.println("Finalizado [x]");
+            System.out.println("\nFinalizado [x]");
         }
     }
 }
