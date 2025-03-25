@@ -94,8 +94,8 @@ public class Funcionario extends Pessoa{
 
 
     public void mostrar() {
-        System.out.println("-----Funcionario-----");
-        System.out.println("\ncodigo: "+getCodigo());
+        System.out.println("\n-----Funcionario-----");
+        System.out.println("codigo: "+getCodigo());
         System.out.println("nome: "+getNome());
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());

@@ -127,8 +127,8 @@ public class Obra {
     public void listar() {}
 
     public void mostrar() {
-        System.out.println("-----Obra-----");
-        System.out.println("\ncodigo: "+getCodigo());
+        System.out.println("\n-----Obra-----");
+        System.out.println("codigo: "+getCodigo());
         System.out.println("autores:" +getAutores());
         System.out.println("titulo: "+getTitulo());
         System.out.println("editora: "+getEditora());

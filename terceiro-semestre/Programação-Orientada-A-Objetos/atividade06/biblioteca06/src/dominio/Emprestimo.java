@@ -145,8 +145,8 @@ public class Emprestimo {
     public void listar() {}
 
     public void mostrar() {
-        System.out.println("-----Emprestimo-----");
-        System.out.println("\ncodigo: "+getCodigo());
+        System.out.println("\n-----Emprestimo-----");
+        System.out.println("codigo: "+getCodigo());
         System.out.println("data do empréstimo: "+getDataEmprestimo());
         System.out.println("data prevista para devolução: "+getDataPrevista());
         System.out.println("data da devolução: "+getDataDevolvida());

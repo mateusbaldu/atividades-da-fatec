@@ -41,7 +41,6 @@ public class Main {
             emprestimo.mostrar();
 
             System.out.println("\nAlgoritmo encerrado!");
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -40,8 +40,8 @@ public class CategoriaObra extends Categoria{
     public void carregar() {}
 
     public void mostrar() {
-        System.out.println("-----Categoria da Obra-----");
-        System.out.println("\ncodigo: " +getCodigo());
+        System.out.println("\n-----Categoria da Obra-----");
+        System.out.println("codigo: " +getCodigo());
         System.out.println("tipo: " +getTipo());
     }
 }

@@ -20,7 +20,7 @@ public class Reserva {
         this.setCodigoObra(codigoObra);
     }
 
-    public Reserva(){}
+    public Reserva() throws Exception{}
 
 
     public Integer getCodigo() {
@@ -101,8 +101,8 @@ public class Reserva {
     public void retirar() {}
 
     public void mostrar() {
-        System.out.println("-----Reserva-----");
-        System.out.println("\ncodigo: "+getCodigo());
+        System.out.println("\n-----Reserva-----");
+        System.out.println("codigo: "+getCodigo());
         System.out.println("data da reserva: "+getDataReserva());
         System.out.println("data prevista de retorno: "+getDataPrevista());
         System.out.println("situação: "+getSituacao());

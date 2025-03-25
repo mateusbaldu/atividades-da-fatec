@@ -41,8 +41,8 @@ public class CategoriaLeitor extends Categoria{
     public void carregar() {}
 
     public void mostrar() {
-        System.out.println("-----Categoria do Leitor-----");
-        System.out.println("\ncodigo: " +getCodigo());
+        System.out.println("\n-----Categoria do Leitor-----");
+        System.out.println("codigo: " +getCodigo());
         System.out.println("tipo: " +getTipo());
     }
 }

@@ -98,8 +98,8 @@ public class Leitor extends Pessoa{
     public void listar() {}
 
     public void mostrar() {
-        System.out.println("-----Leitor-----");
-        System.out.println("\ncodigo: "+getCodigo());
+        System.out.println("\n-----Leitor-----");
+        System.out.println("codigo: "+getCodigo());
         System.out.println("nome: "+getNome());
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());

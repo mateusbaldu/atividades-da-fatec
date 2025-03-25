@@ -69,8 +69,8 @@ public class Copia {
     public void listar() {}
 
     public void mostrar() {
-        System.out.println("-----Copia-----");
-        System.out.println("\ncodigo: "+getCodigo());
+        System.out.println("\n-----Copia-----");
+        System.out.println("codigo: "+getCodigo());
         System.out.println("situação: "+getSituacao());
         System.out.println("descritivo: "+getDescritivo());
     }
