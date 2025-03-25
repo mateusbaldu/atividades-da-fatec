@@ -15,6 +15,7 @@ public class Copia {
 
     public Copia() {}
 
+
     public int getCodigo() {
         return codigo;
     }
@@ -30,6 +31,7 @@ public class Copia {
     public Obra getCodigoObra() {
         return codigoObra;
     }
+
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
@@ -61,11 +63,13 @@ public class Copia {
         this.codigoObra = codigoObra;
     }
 
+
     public void guardar() {}
     public void carregar() {}
     public void listar() {}
 
     public void mostrar() {
+        System.out.println("-----Copia-----");
         System.out.println("\ncodigo: "+getCodigo());
         System.out.println("situação: "+getSituacao());
         System.out.println("descritivo: "+getDescritivo());

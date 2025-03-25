@@ -1,15 +1,14 @@
 package dominio;
 
-public class CategoriaObra {
-    private int codigo;
-    private String tipo;
+public class CategoriaObra extends Categoria{
 
     public CategoriaObra(int codigo, String tipo) throws Exception{
         this.setCodigo(codigo);
         this.setTipo(tipo);
     }
 
-    public CategoriaObra(){}
+    public CategoriaObra() throws Exception{}
+
 
     public int getCodigo() {
         return codigo;
@@ -18,6 +17,7 @@ public class CategoriaObra {
     public String getTipo() {
         return tipo;
     }
+
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
@@ -35,10 +35,12 @@ public class CategoriaObra {
         }
     }
 
+
     public void guardar() {}
     public void carregar() {}
 
     public void mostrar() {
+        System.out.println("-----Categoria da Obra-----");
         System.out.println("\ncodigo: " +getCodigo());
         System.out.println("tipo: " +getTipo());
     }

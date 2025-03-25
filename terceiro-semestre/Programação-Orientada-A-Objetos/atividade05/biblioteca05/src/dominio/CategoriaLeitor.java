@@ -1,16 +1,15 @@
 package dominio;
 
-public class CategoriaLeitor {
-    private int codigo;
-    private String tipo;
+public class CategoriaLeitor extends Categoria{
 
-    public CategoriaLeitor(int codigo, String tipo) throws Exception{
+    public CategoriaLeitor(int codigo, String tipo) throws Exception {
         this.setCodigo(codigo);
         this.setTipo(tipo);
     }
 
-    public CategoriaLeitor() {
+    public CategoriaLeitor() throws Exception{
     }
+
 
     public int getCodigo() {
         return codigo;
@@ -19,6 +18,7 @@ public class CategoriaLeitor {
     public String getTipo() {
         return tipo;
     }
+
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
@@ -36,10 +36,12 @@ public class CategoriaLeitor {
         }
     }
 
+
     public void guardar() {}
     public void carregar() {}
 
     public void mostrar() {
+        System.out.println("-----Categoria do Leitor-----");
         System.out.println("\ncodigo: " +getCodigo());
         System.out.println("tipo: " +getTipo());
     }

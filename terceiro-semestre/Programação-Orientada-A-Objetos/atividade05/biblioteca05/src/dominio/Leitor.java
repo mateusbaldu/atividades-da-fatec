@@ -1,24 +1,24 @@
 package dominio;
 
-public class Leitor {
-    private int codigo;
-    private String nome;
-    private String email;
-    private String telefone;
-    private String documento;
+public class Leitor extends Pessoa{
     private CategoriaLeitor categoriaLeitor;
 
-    public Leitor(int codigo, String nome, String email, String telefone,
-                  String documento, CategoriaLeitor categoriaLeitor) throws Exception{
+    public Leitor(int codigo, String nome, String email, String telefone, String documento,
+                  CategoriaLeitor categoriaLeitor) throws Exception {
         this.setCodigo(codigo);
-        this.setEmail(email);
         this.setNome(nome);
+        this.setEmail(email);
         this.setTelefone(telefone);
         this.setDocumento(documento);
         this.setCategoriaLeitor(categoriaLeitor);
     }
 
-    public Leitor(){}
+    public Leitor(CategoriaLeitor categoriaLeitor) throws Exception {
+        this.setCategoriaLeitor(categoriaLeitor);
+    }
+
+    public Leitor() throws Exception{}
+
 
     public int getCodigo() {
         return codigo;
@@ -43,6 +43,7 @@ public class Leitor {
     public CategoriaLeitor getCategoriaLeitor() {
         return categoriaLeitor;
     }
+
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
@@ -91,15 +92,18 @@ public class Leitor {
         }
     }
 
+
     public void guardar() {}
     public void carregar() {}
     public void listar() {}
 
     public void mostrar() {
+        System.out.println("-----Leitor-----");
         System.out.println("\ncodigo: "+getCodigo());
         System.out.println("nome: "+getNome());
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());
         System.out.println("documento: "+getDocumento());
+
     }
 }

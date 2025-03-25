@@ -29,6 +29,7 @@ public class Emprestimo {
 
     public Emprestimo(){}
 
+
     public int getCodigo() {
         return codigo;
     }
@@ -64,6 +65,7 @@ public class Emprestimo {
     public Copia getCodigoCopia() {
         return codigoCopia;
     }
+
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
@@ -136,12 +138,14 @@ public class Emprestimo {
         }
     }
 
+
     public void cadastrar() {}
     public void carregar() {}
     public void devolver() {}
     public void listar() {}
 
     public void mostrar() {
+        System.out.println("-----Emprestimo-----");
         System.out.println("\ncodigo: "+getCodigo());
         System.out.println("data do empréstimo: "+getDataEmprestimo());
         System.out.println("data prevista para devolução: "+getDataPrevista());

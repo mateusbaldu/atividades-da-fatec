@@ -22,6 +22,7 @@ public class Reserva {
 
     public Reserva(){}
 
+
     public Integer getCodigo() {
         return codigo;
     }
@@ -45,6 +46,7 @@ public class Reserva {
     public Obra getCodigoObra() {
         return codigoObra;
     }
+
 
     public void setCodigo(Integer codigo) throws Exception{
         if (codigo <= 0) {
@@ -93,11 +95,13 @@ public class Reserva {
         }
     }
 
+
     public void cadastrar() {}
     public void cancelar() {}
     public void retirar() {}
 
     public void mostrar() {
+        System.out.println("-----Reserva-----");
         System.out.println("\ncodigo: "+getCodigo());
         System.out.println("data da reserva: "+getDataReserva());
         System.out.println("data prevista de retorno: "+getDataPrevista());

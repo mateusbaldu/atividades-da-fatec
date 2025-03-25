@@ -1,11 +1,6 @@
 package dominio;
 
-public class Funcionario {
-    private int codigo;
-    private String nome;
-    private String email;
-    private String telefone;
-    private String documento;
+public class Funcionario extends Pessoa{
     private String cargo;
 
     public Funcionario(int codigo, String nome, String email, String telefone,
@@ -18,7 +13,12 @@ public class Funcionario {
         this.setCargo(cargo);
     }
 
-    public Funcionario(){}
+    public Funcionario(String cargo) throws Exception {
+        this.setCargo(cargo);
+    }
+
+    public Funcionario() throws Exception{}
+
 
     public int getCodigo() {
         return codigo;
@@ -43,6 +43,7 @@ public class Funcionario {
     public String getCargo() {
         return cargo;
     }
+
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
@@ -91,11 +92,9 @@ public class Funcionario {
         }
     }
 
-    public void carregar() {}
-    public void guardar() {}
-    public void listar() {}
 
     public void mostrar() {
+        System.out.println("-----Funcionario-----");
         System.out.println("\ncodigo: "+getCodigo());
         System.out.println("nome: "+getNome());
         System.out.println("email: "+getEmail());
@@ -139,4 +138,8 @@ public class Funcionario {
         HxH.mostrar();
         return HxH;
     }
+
+    public void carregar() {}
+    public void guardar() {}
+    public void listar() {}
 }

@@ -25,6 +25,7 @@ public class Obra {
 
     public Obra(){}
 
+
     public int getCodigo() {
         return codigo;
     }
@@ -56,6 +57,7 @@ public class Obra {
     public CategoriaObra getCodigoCategoriaObra() {
         return codigoCategoriaObra;
     }
+
 
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
@@ -119,11 +121,13 @@ public class Obra {
         }
     }
 
+
     public void guardar() {}
     public void carregar() {}
     public void listar() {}
 
     public void mostrar() {
+        System.out.println("-----Obra-----");
         System.out.println("\ncodigo: "+getCodigo());
         System.out.println("autores:" +getAutores());
         System.out.println("titulo: "+getTitulo());
