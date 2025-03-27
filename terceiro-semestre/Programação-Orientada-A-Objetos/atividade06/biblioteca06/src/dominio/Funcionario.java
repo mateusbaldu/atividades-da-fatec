@@ -111,7 +111,7 @@ public class Funcionario extends Pessoa{
         HunterXHunter.setEditora("Shounen Jump");
         HunterXHunter.setAno(1998);
         HunterXHunter.setDescritivo("Melhor mangá da história");
-        HunterXHunter.setIsbn(1998445);
+        HunterXHunter.setIsbn("1998445000123");
         HunterXHunter.setCodigoCategoriaObra(categoriaObra);
         HunterXHunter.mostrar();
     }
@@ -134,7 +134,7 @@ public class Funcionario extends Pessoa{
         HxH.setCodigo(557);
         HxH.setSituacao("Indisponível");
         HxH.setDescritivo("Emprestada");
-        HxH.setCodigoObra(HunterXHunter);
+        HxH.setObra(HunterXHunter);
         HxH.mostrar();
         return HxH;
     }

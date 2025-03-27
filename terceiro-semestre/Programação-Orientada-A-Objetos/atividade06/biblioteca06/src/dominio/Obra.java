@@ -7,12 +7,12 @@ public class Obra {
     private String editora;
     private int ano;
     private String descritivo;
-    private int isbn;
+    private String isbn;
     private CategoriaObra codigoCategoriaObra;
 
     public Obra(int codigo, String autores, String titulo,
                 String editora, int ano, String descritivo,
-                int isbn, CategoriaObra codigoCategoriaObra) throws Exception{
+                String isbn, CategoriaObra codigoCategoriaObra) throws Exception{
         this.setCodigo(codigo);
         this.setAutores(autores);
         this.setTitulo(titulo);
@@ -50,7 +50,7 @@ public class Obra {
         return descritivo;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
@@ -105,9 +105,9 @@ public class Obra {
         }
     }
 
-    public void setIsbn(int isbn) throws Exception{
-        if (isbn <= 0) {
-            throw new Exception("Erro! O isbn não pode ser zero ou negativo");
+    public void setIsbn(String isbn) throws Exception{
+        if (isbn == null || isbn.length() < 13) {
+            throw new Exception("Erro! Insira o isbn corretamente (13 dígitos)");
         } else {
             this.isbn = isbn;
         }
@@ -135,5 +135,6 @@ public class Obra {
         System.out.println("ano: "+getAno());
         System.out.println("descritivo: "+getDescritivo());
         System.out.println("ISBN: "+getIsbn());
+        System.out.println("Categoria da obra: " +codigoCategoriaObra.getTipo());
     }
 }

@@ -104,6 +104,6 @@ public class Leitor extends Pessoa{
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());
         System.out.println("documento: "+getDocumento());
-
+        System.out.println("Categoria do Leitor: " +categoriaLeitor.getTipo());
     }
 }

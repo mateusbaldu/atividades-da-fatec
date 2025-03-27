@@ -4,13 +4,13 @@ public class Copia {
     private int codigo;
     private String situacao;
     private String descritivo;
-    public Obra codigoObra;
+    public Obra obra;
 
-    public Copia(int codigo, String situacao, String descritivo, Obra codigoObra) throws Exception{
+    public Copia(int codigo, String situacao, String descritivo, Obra obra) throws Exception{
         this.setCodigo(codigo);
         this.setSituacao(situacao);
         this.setDescritivo(descritivo);
-        this.setCodigoObra(codigoObra);
+        this.setObra(obra);
     }
 
     public Copia() {}
@@ -28,8 +28,8 @@ public class Copia {
         return descritivo;
     }
 
-    public Obra getCodigoObra() {
-        return codigoObra;
+    public Obra getObra() {
+        return obra;
     }
 
 
@@ -56,11 +56,11 @@ public class Copia {
         }
     }
 
-    public void setCodigoObra(Obra codigoObra) throws Exception{
-        if (codigoObra.getCodigo() <= 0) {
+    public void setObra(Obra obra) throws Exception{
+        if (obra.getCodigo() <= 0) {
             throw new Exception("Erro! O codigo da obra não pode ser negativo ou zero");
         }
-        this.codigoObra = codigoObra;
+        this.obra = obra;
     }
 
 
@@ -70,6 +70,7 @@ public class Copia {
 
     public void mostrar() {
         System.out.println("\n-----Copia-----");
+        System.out.println("\nNome da obra: " + obra.getTitulo());
         System.out.println("codigo: "+getCodigo());
         System.out.println("situação: "+getSituacao());
         System.out.println("descritivo: "+getDescritivo());

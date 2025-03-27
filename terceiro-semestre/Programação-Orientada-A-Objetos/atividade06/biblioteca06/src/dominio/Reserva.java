@@ -106,5 +106,7 @@ public class Reserva {
         System.out.println("data da reserva: "+getDataReserva());
         System.out.println("data prevista de retorno: "+getDataPrevista());
         System.out.println("situação: "+getSituacao());
+        System.out.println("Obra reservada: " +codigoObra.getTitulo());
+        System.out.println("Leitor que fez a reserva: " +codigoLeitor.getNome());
     }
 }

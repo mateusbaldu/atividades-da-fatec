@@ -7,8 +7,7 @@ public class CategoriaLeitor extends Categoria{
         this.setTipo(tipo);
     }
 
-    public CategoriaLeitor() throws Exception{
-    }
+    public CategoriaLeitor() throws Exception{}
 
 
     public int getCodigo() {

@@ -20,7 +20,7 @@ public class Main {
             Miguel.mostrar();
 
             Obra obraUm = new Obra(333, "Mauricio de Souza","Turma da Monica","Panini",
-                    2012,"Turma da Monica", 2012557, categoriaObraDois);
+                    2012,"Turma da Monica", "2012557000123", categoriaObraDois);
             obraUm.mostrar();
 
             Copia turmaDaMonica = new Copia(3335,"Reservada","Insira texto", obraUm);

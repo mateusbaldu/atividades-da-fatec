@@ -152,5 +152,8 @@ public class Emprestimo {
         System.out.println("data da devolução: "+getDataDevolvida());
         System.out.println("multa: "+getMulta());
         System.out.println("situação: "+getSituacao());
+        System.out.println("Codigo da copia: " +codigoCopia.getCodigo());
+        System.out.println("Nome do leitor do empréstimo: " +codigoLeitor.getNome());
+        System.out.println("Funcionário que realizou o emprestimo: " +codigoFuncionario.getNome());
     }
 }

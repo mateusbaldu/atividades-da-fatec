@@ -26,7 +26,7 @@ public abstract class Categoria {
         this.codigo = codigo;
     }
 
-    public void setTipo(String tipo) throws Exception{
+    public void setTipo(String tipo) throws Exception {
         this.tipo = tipo;
     }
 
