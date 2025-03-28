@@ -3,11 +3,11 @@ package dominio;
 public class InformacoesDeEnvio {
     private int numFrete;
     private String tipoFrete;
-    private float precoFrete;
+    private double precoFrete;
     private int numRegiaoFrete;
     private Pedido pedido;
 
-    public InformacoesDeEnvio(int numFrete, String tipoFrete, float precoFrete,
+    public InformacoesDeEnvio(int numFrete, String tipoFrete, double precoFrete,
                               int numRegiaoFrete, Pedido pedido) throws Exception {
         setNumFrete(numFrete);
         setTipoFrete(tipoFrete);
@@ -25,7 +25,7 @@ public class InformacoesDeEnvio {
         return tipoFrete;
     }
 
-    public float getPrecoFrete() {
+    public double getPrecoFrete() {
         return precoFrete;
     }
 
@@ -50,7 +50,7 @@ public class InformacoesDeEnvio {
         }
     }
 
-    public void setPrecoFrete(float precoFrete) {
+    public void setPrecoFrete(double precoFrete) {
         this.precoFrete = precoFrete;
     }
 
@@ -63,15 +63,14 @@ public class InformacoesDeEnvio {
     }
 
 
-    @Override
-    public String toString() {
-        return  "\n-------------------" +
+    public void imprimir(){
+        System.out.println("\n-------------------" +
                 "\nInformacoes De Envio: " +
                 "\nnumFrete= " + numFrete +
                 "\ntipoFrete= '" + tipoFrete + '\'' +
                 "\nprecoFrete= " + precoFrete +
                 "\nnumRegiaoFrete= " + numRegiaoFrete +
-                "\npedido= " + pedido;
+                "\nNumero do pedido= " + pedido.getNumPedido());
     }
 
     public void atualizarInfoFrete(){}

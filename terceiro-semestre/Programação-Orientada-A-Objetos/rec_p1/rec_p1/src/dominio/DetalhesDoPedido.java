@@ -84,17 +84,16 @@ public class DetalhesDoPedido {
     }
 
 
-    @Override
-    public String toString() {
-        return  "\n-------------------" +
+    public void imprimir(){
+        System.out.println("\n-------------------" +
                 "\nDetalhes Do Pedido: " +
-                "\npedido= " + pedido +
+                "\nNumero do pedido= " + pedido.getNumPedido() +
                 "\nnumPedido= " + numPedido +
                 "\nnumProduto= " + numProduto +
                 "\nnomeProduto= '" + nomeProduto + '\'' +
                 "\nquantidade= " + quantidade +
                 "\nprecoUnidade= " + precoUnidade +
-                "\nsubtotal= " + subtotal;
+                "\nsubtotal= " + subtotal);
     }
 
     public float calcularPreco(){

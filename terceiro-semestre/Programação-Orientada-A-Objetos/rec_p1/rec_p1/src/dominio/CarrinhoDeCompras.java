@@ -65,15 +65,14 @@ public class CarrinhoDeCompras {
     }
 
 
-    @Override
-    public String toString() {
-        return  "\n-------------------" +
+    public void imprimir() {
+        System.out.println(  "\n-------------------" +
                 "\nCARRINHO DE COMPRAS: " +
                 "\nnumCarrinho= " + numCarrinho +
                 "\nnumProduto= " + numProduto +
                 "\nquantidade= " + quantidade +
                 "\ndataAdicionado= " + dataAdicionado +
-                "\ncliente= " + cliente.getNomeCliente();
+                "\ncliente= " + cliente.getNomeCliente());
     }
 
     public void atualizarQuantidade(int quantidade){}

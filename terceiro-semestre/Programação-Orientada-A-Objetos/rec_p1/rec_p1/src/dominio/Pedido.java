@@ -14,16 +14,14 @@ public class Pedido {
     private InformacoesDeEnvio informacoesDeEnvio;
     private DetalhesDoPedido detalhesDoPedido;
 
-    public Pedido(int numPedido, LocalDate dataCriacao, String dataFrete,
-                  String status, String numFrete, InformacoesDeEnvio informacoesDeEnvio,
-                  DetalhesDoPedido detalhesDoPedido) throws Exception{
+    public Pedido(int numPedido, Cliente cliente, LocalDate dataCriacao, String dataFrete,
+                  String status, String numFrete) throws Exception{
         setNumPedido(numPedido);
+        setCliente(cliente);
         setDataCriacao(dataCriacao);
         setDataFrete(dataFrete);
         setStatus(status);
         setNumFrete(numFrete);
-        setInformacoesDeEnvio(informacoesDeEnvio);
-        setDetalhesDoPedido(detalhesDoPedido);
 
         setNomeCliente(); //estao dessa forma para pegar
         setNumCliente(); //essas informacoes diretamente do usuario
@@ -116,18 +114,16 @@ public class Pedido {
     }
 
 
-    @Override
-    public String toString() {
-        return  "\n-------------------" +
+    public void imprimir(){
+        System.out.println("\n-------------------" +
                 "\nPEDIDO: " +
                 "\nnumPedido= " + numPedido +
                 "\ndataCriacao= " + dataCriacao +
                 "\ndataFrete= '" + dataFrete + '\'' +
-                "\ncliente= " + cliente +
                 "\nnomeCliente= '" + nomeCliente + '\'' +
                 "\nnumCliente= '" + numCliente + '\'' +
                 "\nstatus= '" + status + '\'' +
-                "\nnumFrete= '" + numFrete;
+                "\nnumFrete= '" + numFrete);
     }
 
     public void efetuarPedido(){}

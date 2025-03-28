@@ -8,14 +8,13 @@ public class Cliente extends Usuario{
     private String email;
     private String infoCartaoCredito;
     private String infoFrete;
-    private float saldoConta;
+    private double saldoConta;
     private CarrinhoDeCompras carrinhoDeCompras;
     private Pedido pedido;
 
     public Cliente(String numUsuario, String senha, String statusLogin, LocalDate dataRegistro,
                    String nomeCliente, String endereco, String email, String infoCartaoCredito,
-                   String infoFrete, float saldoConta, CarrinhoDeCompras carrinhoDeCompras,
-                   Pedido pedido) throws Exception{
+                   String infoFrete, double saldoConta) throws Exception{
         super(numUsuario, senha, statusLogin, dataRegistro);
         setNomeCliente(nomeCliente);
         setEndereco(endereco);
@@ -23,9 +22,8 @@ public class Cliente extends Usuario{
         setInfoCartaoCredito(infoCartaoCredito);
         setInfoFrete(infoFrete);
         setSaldoConta(saldoConta);
-        setCarrinhoDeCompras(carrinhoDeCompras);
-        setPedido(pedido);
     }
+
 
 
     public String getNomeCliente() {
@@ -48,13 +46,18 @@ public class Cliente extends Usuario{
         return infoFrete;
     }
 
-    public float getSaldoConta() {
+    public double getSaldoConta() {
         return saldoConta;
     }
 
     public CarrinhoDeCompras getCarrinhoDeCompras() {
         return carrinhoDeCompras;
     }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
 
 
     public void setNomeCliente(String nomeCliente) {
@@ -81,7 +84,7 @@ public class Cliente extends Usuario{
         this.infoFrete = infoFrete;
     }
 
-    public void setSaldoConta(float saldoConta) {
+    public void setSaldoConta(double saldoConta) {
         this.saldoConta = saldoConta;
     }
 
@@ -89,11 +92,14 @@ public class Cliente extends Usuario{
         this.carrinhoDeCompras = carrinhoDeCompras;
     }
 
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
 
 
-    @Override
-    public String toString() {
-        return  "\n-------------------" +
+
+    public void imprimir(){
+        System.out.println(  "\n-------------------" +
                 "\nCLIENTE: " +
                 "\nnomeCliente= '" + nomeCliente + '\'' +
                 "\nnumUsuario= '" + numUsuario + '\'' +
@@ -102,11 +108,9 @@ public class Cliente extends Usuario{
                 "\nsaldoConta= " + saldoConta +
                 "\ninfoCartaoCredito= '" + infoCartaoCredito + '\'' +
                 "\ninfoFrete= '" + infoFrete + '\'' +
-                "\nnumero do carrinho de compras= " + carrinhoDeCompras.getNumCarrinho() +
-                "\nnumero do pedido=" + pedido.getNumPedido() +
                 "\nsenha= '" + senha + '\'' +
                 "\nstatusLogin= '" + statusLogin + '\'' +
-                "\ndataRegistro= " + dataRegistro;
+                "\ndataRegistro= " + dataRegistro);
     }
 
     @Override

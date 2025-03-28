@@ -31,21 +31,24 @@ public class Admin extends Usuario{
         }
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws Exception {
+        if (email.length() <= 5 || email.isEmpty() || !email.contains("@")) {
+            throw new Exception("Erro! O email foi informado incorretamente");
+        } else {
+            this.email = email;
+        }
     }
 
 
-    @Override
-    public String toString() {
-        return  "\n-------------------" +
+    public void imprimir() {
+        System.out.println(  "\n-------------------" +
                 "\nADMIN: " +
                 "\nnomeAdmin= '" + nomeAdmin + '\'' +
                 "\nemail= '" + email + '\'' +
                 "\nnumUsuario= '" + numUsuario + '\'' +
                 "\nsenha= '" + "*******************" + '\'' +
                 "\nstatusLogin= '" + statusLogin + '\'' +
-                "\ndataRegistro= " + dataRegistro;
+                "\ndataRegistro= " + dataRegistro);
     }
 
     @Override
