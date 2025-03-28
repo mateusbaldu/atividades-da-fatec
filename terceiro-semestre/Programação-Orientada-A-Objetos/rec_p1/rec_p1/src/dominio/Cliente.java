@@ -1,6 +1,7 @@
 package dominio;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Cliente extends Usuario{
     private String nomeCliente;
@@ -9,8 +10,8 @@ public class Cliente extends Usuario{
     private String infoCartaoCredito;
     private String infoFrete;
     private double saldoConta;
-    private CarrinhoDeCompras carrinhoDeCompras;
-    private Pedido pedido;
+    private List<CarrinhoDeCompras> carrinhoDeCompras;
+    private List<Pedido> pedido;
 
     public Cliente(String numUsuario, String senha, String statusLogin, LocalDate dataRegistro,
                    String nomeCliente, String endereco, String email, String infoCartaoCredito,
@@ -50,15 +51,13 @@ public class Cliente extends Usuario{
         return saldoConta;
     }
 
-    public CarrinhoDeCompras getCarrinhoDeCompras() {
+    public List<CarrinhoDeCompras> getCarrinhoDeCompras() {
         return carrinhoDeCompras;
     }
 
-    public Pedido getPedido() {
+    public List<Pedido> getPedido() {
         return pedido;
     }
-
-
 
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
@@ -88,15 +87,13 @@ public class Cliente extends Usuario{
         this.saldoConta = saldoConta;
     }
 
-    public void setCarrinhoDeCompras(CarrinhoDeCompras carrinhoDeCompras) {
+    public void setCarrinhoDeCompras(List<CarrinhoDeCompras> carrinhoDeCompras) {
         this.carrinhoDeCompras = carrinhoDeCompras;
     }
 
-    public void setPedido(Pedido pedido) {
+    public void setPedido(List<Pedido> pedido) {
         this.pedido = pedido;
     }
-
-
 
     public void imprimir(){
         System.out.println(  "\n-------------------" +
