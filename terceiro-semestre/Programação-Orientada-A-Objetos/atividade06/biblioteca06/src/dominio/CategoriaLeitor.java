@@ -3,8 +3,8 @@ package dominio;
 public class CategoriaLeitor extends Categoria{
 
     public CategoriaLeitor(int codigo, String tipo) throws Exception {
-        this.setCodigo(codigo);
-        this.setTipo(tipo);
+        setCodigo(codigo);
+        setTipo(tipo);
     }
 
     public CategoriaLeitor() throws Exception{}
