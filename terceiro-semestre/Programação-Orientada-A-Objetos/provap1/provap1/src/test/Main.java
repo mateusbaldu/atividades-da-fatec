@@ -35,6 +35,7 @@ public class Main {
 
         administrador.notificarPagamentoPendente(matricula, false);
         administrador.gerenciarSalario(professor);
+        administrador.gerarRelatorioMatricula(matricula, aluno);
 
         professor.registrarNotaDeAluno(tarefa, 9.5);
         Aula aula = (professor.marcarAula(cursoUm, professor, "POO", LocalDate.now(), LocalTime.now()));

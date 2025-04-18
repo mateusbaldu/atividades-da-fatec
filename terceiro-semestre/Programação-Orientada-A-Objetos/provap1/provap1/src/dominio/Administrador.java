@@ -20,8 +20,8 @@ public class Administrador extends Pessoa {
     }
 
 
-    public void gerarRelatorioMatricula() {
-        System.out.println("Insira texto");
+    public void gerarRelatorioMatricula(Matricula matricula, Aluno aluno) {
+        System.out.println("O aluno " + aluno.getNome() + " está matriculado no curso " + aluno.getCurso().getNome());
     }
 
     public void notificarPagamentoPendente(Matricula matricula, boolean pagamentoEstaPendente) {
