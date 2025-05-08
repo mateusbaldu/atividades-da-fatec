@@ -1,18 +1,20 @@
 package dominio;
 
+import atributes.Cpf;
+
 public abstract class Pessoa {
     protected int codigo;
     protected String nome;
     protected String email;
     protected String telefone;
-    protected String documento;
+    protected Cpf cpf;
 
-    public Pessoa(int codigo, String nome, String email, String telefone, String documento) throws Exception{
+    public Pessoa(int codigo, String nome, String email, String telefone, Cpf cpf) throws Exception{
         this.setCodigo(codigo);
         this.setNome(nome);
         this.setEmail(email);
         this.setTelefone(telefone);
-        this.setDocumento(documento);
+        this.setCpf(cpf);
     }
 
     public Pessoa() throws Exception{}
@@ -34,8 +36,8 @@ public abstract class Pessoa {
         return telefone;
     }
 
-    public String getDocumento() {
-        return documento;
+    public Cpf getCpf() {
+        return cpf;
     }
 
 
@@ -55,8 +57,8 @@ public abstract class Pessoa {
         this.telefone = telefone;
     }
 
-    public void setDocumento(String documento) throws Exception{
-        this.documento = documento;
+    public void setCpf(Cpf cpf) throws Exception{
+        this.cpf = cpf;
     }
 
     public abstract void mostrar();

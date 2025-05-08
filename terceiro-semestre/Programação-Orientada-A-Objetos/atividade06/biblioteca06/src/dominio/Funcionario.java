@@ -1,15 +1,17 @@
 package dominio;
 
+import atributes.Cpf;
+
 public class Funcionario extends Pessoa{
     private String cargo;
 
     public Funcionario(int codigo, String nome, String email, String telefone,
-                       String documento, String cargo) throws Exception{
+                       Cpf cpf, String cargo) throws Exception{
         this.setCodigo(codigo);
         this.setNome(nome);
         this.setEmail(email);
         this.setTelefone(telefone);
-        this.setDocumento(documento);
+        this.setCpf(cpf);
         this.setCargo(cargo);
     }
 
@@ -36,8 +38,8 @@ public class Funcionario extends Pessoa{
         return telefone;
     }
 
-    public String getDocumento() {
-        return documento;
+    public Cpf getCpf() {
+        return cpf;
     }
 
     public String getCargo() {
@@ -76,11 +78,11 @@ public class Funcionario extends Pessoa{
         }
     }
 
-    public void setDocumento(String documento) throws Exception{
-        if (documento == null || documento.isEmpty()) {
+    public void setCpf(Cpf cpf) throws Exception{
+        if (cpf == null || cpf.getValue().isEmpty()) {
             throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
-            this.documento = documento;
+            this.cpf = cpf;
         }
     }
 
@@ -99,7 +101,7 @@ public class Funcionario extends Pessoa{
         System.out.println("nome: "+getNome());
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());
-        System.out.println("documento: "+getDocumento());
+        System.out.println("documento: "+ getCpf().getValue());
         System.out.println("cargo: "+getCargo());
     }
 
@@ -118,11 +120,12 @@ public class Funcionario extends Pessoa{
 
     public Leitor gerenciarLeitor(CategoriaLeitor categoriaLeitor) throws Exception {
         Leitor Vinicius = new Leitor();
+        Cpf cpf = new Cpf("445.776.001-55");
         Vinicius.setCodigo(7);
         Vinicius.setNome("Vinicius Moraes");
         Vinicius.setEmail("viniciusficticio@gmail.com");
         Vinicius.setTelefone("956733321");
-        Vinicius.setDocumento("445.776.001-55");
+        Vinicius.setCpf(cpf);
         Vinicius.setCategoriaLeitor(categoriaLeitor);
         Vinicius.mostrar();
 

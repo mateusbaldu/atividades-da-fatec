@@ -1,5 +1,6 @@
 package test;
 
+import atributes.Cpf;
 import dominio.*;
 import java.time.LocalDate;
 
@@ -15,8 +16,9 @@ public class Main {
             CategoriaLeitor categoriaLeitorUm = new CategoriaLeitor(3, "Estudante");
             categoriaLeitorUm.mostrar();
 
+            Cpf cpfMiguel = new Cpf("123.456.789-00");
             Funcionario Miguel = new Funcionario(202502, "Miguel Silva", "miguelficticio@email.com",
-                    "912345678", "123.456.789-00", "desenvolvedor");
+                    "912345678", cpfMiguel , "desenvolvedor");
             Miguel.mostrar();
 
             Obra obraUm = new Obra(333, "Mauricio de Souza","Turma da Monica","Panini",
@@ -26,8 +28,9 @@ public class Main {
             Copia turmaDaMonica = new Copia(3335,"Reservada","Insira texto", obraUm);
             turmaDaMonica.mostrar();
 
+            Cpf cpfMateus = new Cpf("142.123.198-00");
             Leitor Mateus = new Leitor(20240533,"Mateus Balduino","mateusficticio@email.com",
-                    "912344321","142.123.198-00", categoriaLeitorUm);
+                    "912344321", cpfMateus , categoriaLeitorUm);
             Mateus.mostrar();
 
             Reserva turmaDaMonicaUm = new Reserva(3335142,LocalDate.of(2025,2,21),

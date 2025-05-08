@@ -1,15 +1,17 @@
 package dominio;
 
+import atributes.Cpf;
+
 public class Leitor extends Pessoa{
     private CategoriaLeitor categoriaLeitor;
 
-    public Leitor(int codigo, String nome, String email, String telefone, String documento,
+    public Leitor(int codigo, String nome, String email, String telefone, Cpf cpf,
                   CategoriaLeitor categoriaLeitor) throws Exception {
         this.setCodigo(codigo);
         this.setNome(nome);
         this.setEmail(email);
         this.setTelefone(telefone);
-        this.setDocumento(documento);
+        this.setCpf(cpf);
         this.setCategoriaLeitor(categoriaLeitor);
     }
 
@@ -36,8 +38,8 @@ public class Leitor extends Pessoa{
         return telefone;
     }
 
-    public String getDocumento() {
-        return documento;
+    public Cpf getCpf() {
+        return cpf;
     }
 
     public CategoriaLeitor getCategoriaLeitor() {
@@ -76,11 +78,11 @@ public class Leitor extends Pessoa{
         }
     }
 
-    public void setDocumento(String documento) throws Exception{
-        if (documento == null || documento.isEmpty()) {
+    public void setCpf(Cpf cpf) throws Exception{
+        if (cpf == null || cpf.getValue().isEmpty()) {
             throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
-            this.documento = documento;
+            this.cpf = cpf;
         }
     }
 
@@ -103,7 +105,7 @@ public class Leitor extends Pessoa{
         System.out.println("nome: "+getNome());
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());
-        System.out.println("documento: "+getDocumento());
+        System.out.println("documento: "+getCpf().getValue());
         System.out.println("Categoria do Leitor: " +categoriaLeitor.getTipo());
     }
 }
