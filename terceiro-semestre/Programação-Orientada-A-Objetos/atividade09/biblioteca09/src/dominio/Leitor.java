@@ -1,18 +1,14 @@
 package dominio;
 
 import DAO.LeitorDAO;
-import atributes.Cpf;
+import atributes.*;
 
 public class Leitor extends Pessoa{
     private CategoriaLeitor categoriaLeitor;
 
-    public Leitor(int codigo, String nome, String email, String telefone, Cpf cpf,
-                  CategoriaLeitor categoriaLeitor) throws Exception {
-        this.setCodigo(codigo);
-        this.setNome(nome);
-        this.setEmail(email);
-        this.setTelefone(telefone);
-        this.setCpf(cpf);
+    public Leitor(long codigo, String nome, String email, String telefone, Cpf cpf,
+                  Endereco endereco, CategoriaLeitor categoriaLeitor) throws Exception {
+        super(codigo, nome, email, telefone, cpf, endereco);
         this.setCategoriaLeitor(categoriaLeitor);
     }
 
@@ -20,10 +16,10 @@ public class Leitor extends Pessoa{
         this.setCategoriaLeitor(categoriaLeitor);
     }
 
-    
+    public Leitor() throws Exception {
+    }
 
-
-    public int getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
@@ -48,7 +44,7 @@ public class Leitor extends Pessoa{
     }
 
 
-    public void setCodigo(int codigo) throws Exception{
+    public void setCodigo(long codigo) throws Exception{
         if (codigo <= 0) {
             throw new Exception("Erro! O código não pode ser negativo ou zero");
         }

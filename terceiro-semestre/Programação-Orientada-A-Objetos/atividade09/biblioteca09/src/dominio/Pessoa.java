@@ -1,15 +1,18 @@
 package dominio;
 
 import atributes.Cpf;
+import atributes.Endereco;
 
 public abstract class Pessoa {
-    protected int codigo;
+    protected long codigo;
     protected String nome;
     protected String email;
     protected String telefone;
     protected Cpf cpf;
+    protected Endereco endereco;
 
-    public Pessoa(int codigo, String nome, String email, String telefone, Cpf cpf) throws Exception{
+    public Pessoa(long codigo, String nome, String email, String telefone, Cpf cpf, Endereco endereco) throws Exception{
+        this.setEndereco(endereco);
         this.setCodigo(codigo);
         this.setNome(nome);
         this.setEmail(email);
@@ -20,7 +23,7 @@ public abstract class Pessoa {
     public Pessoa() throws Exception{}
 
 
-    public int getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
@@ -40,8 +43,12 @@ public abstract class Pessoa {
         return cpf;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
 
-    public void setCodigo(int codigo) throws Exception{
+
+    public void setCodigo(long codigo) throws Exception{
         this.codigo = codigo;
     }
 
@@ -60,6 +67,11 @@ public abstract class Pessoa {
     public void setCpf(Cpf cpf) throws Exception{
         this.cpf = cpf;
     }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
 
     public abstract void mostrar();
 }

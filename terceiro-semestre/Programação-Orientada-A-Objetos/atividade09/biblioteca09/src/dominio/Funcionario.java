@@ -1,17 +1,14 @@
 package dominio;
 
 import atributes.Cpf;
+import atributes.Endereco;
 
 public class Funcionario extends Pessoa{
     private String cargo;
 
-    public Funcionario(int codigo, String nome, String email, String telefone,
-                       Cpf cpf, String cargo) throws Exception{
-        this.setCodigo(codigo);
-        this.setNome(nome);
-        this.setEmail(email);
-        this.setTelefone(telefone);
-        this.setCpf(cpf);
+    public Funcionario(long codigo, String nome, String email, String telefone,
+                       Cpf cpf, String cargo, Endereco endereco) throws Exception{
+        super(codigo, nome, email, telefone, cpf, endereco);
         this.setCargo(cargo);
     }
 
@@ -22,7 +19,7 @@ public class Funcionario extends Pessoa{
     public Funcionario() throws Exception{}
 
 
-    public int getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
@@ -42,12 +39,16 @@ public class Funcionario extends Pessoa{
         return cpf;
     }
 
+    public Endereco getEndereco() {
+        return super.getEndereco();
+    }
+
     public String getCargo() {
         return cargo;
     }
 
 
-    public void setCodigo(int codigo) throws Exception{
+    public void setCodigo(long codigo) throws Exception{
         if (codigo <= 0) {
             throw new Exception("Erro! O código não pode ser negativo ou zero");
         }
@@ -86,6 +87,13 @@ public class Funcionario extends Pessoa{
         }
     }
 
+    public void setEndereco(Endereco endereco) {
+        if (endereco == null || endereco.getValue().isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        }
+        this.endereco = endereco;
+    }
+
     public void setCargo(String cargo) throws Exception{
         if (cargo == null || cargo.isEmpty()) {
             throw new Exception("Erro! Esse campo não pode ser vazio");
@@ -101,6 +109,7 @@ public class Funcionario extends Pessoa{
         System.out.println("nome: "+getNome());
         System.out.println("email: "+getEmail());
         System.out.println("telefone: "+getTelefone());
+        System.out.println("Endereco: "+getEndereco().getValue());
         System.out.println("documento: "+ getCpf().getValue());
         System.out.println("cargo: "+getCargo());
     }
