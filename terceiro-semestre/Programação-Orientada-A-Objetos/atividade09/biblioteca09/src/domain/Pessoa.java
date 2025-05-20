@@ -1,7 +1,7 @@
-package dominio;
+package domain;
 
-import atributes.Cpf;
-import atributes.Endereco;
+import services.Cpf;
+import services.Endereco;
 
 public abstract class Pessoa {
     protected long codigo;
@@ -10,14 +10,17 @@ public abstract class Pessoa {
     protected String telefone;
     protected Cpf cpf;
     protected Endereco endereco;
+    protected String senha;
 
-    public Pessoa(long codigo, String nome, String email, String telefone, Cpf cpf, Endereco endereco) throws Exception{
+    public Pessoa(long codigo, String nome, String email, String telefone,
+                  Cpf cpf, Endereco endereco, String senha) throws Exception{
         this.setEndereco(endereco);
         this.setCodigo(codigo);
         this.setNome(nome);
         this.setEmail(email);
         this.setTelefone(telefone);
         this.setCpf(cpf);
+        this.setSenha(senha);
     }
 
     public Pessoa() throws Exception{}
@@ -47,6 +50,10 @@ public abstract class Pessoa {
         return endereco;
     }
 
+    public String getSenha() {
+        return "**********";
+    }
+
 
     public void setCodigo(long codigo) throws Exception{
         this.codigo = codigo;
@@ -70,6 +77,13 @@ public abstract class Pessoa {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public void setSenha(String senha) {
+        if ((senha.length() < 6)) {
+            throw new IllegalArgumentException("Erro! A senha deve possuir 6 ou mais caractéres");
+        }
+        this.senha = senha;
     }
 
 

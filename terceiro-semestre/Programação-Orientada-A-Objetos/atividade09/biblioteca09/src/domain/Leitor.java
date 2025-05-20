@@ -1,14 +1,13 @@
-package dominio;
+package domain;
 
-import DAO.LeitorDAO;
-import atributes.*;
+import services.*;
 
 public class Leitor extends Pessoa{
     private CategoriaLeitor categoriaLeitor;
 
     public Leitor(long codigo, String nome, String email, String telefone, Cpf cpf,
-                  Endereco endereco, CategoriaLeitor categoriaLeitor) throws Exception {
-        super(codigo, nome, email, telefone, cpf, endereco);
+                  Endereco endereco, String senha, CategoriaLeitor categoriaLeitor) throws Exception {
+        super(codigo, nome, email, telefone, cpf, endereco, senha);
         this.setCategoriaLeitor(categoriaLeitor);
     }
 
@@ -18,6 +17,7 @@ public class Leitor extends Pessoa{
 
     public Leitor() throws Exception {
     }
+
 
     public long getCodigo() {
         return codigo;
@@ -37,6 +37,14 @@ public class Leitor extends Pessoa{
 
     public Cpf getCpf() {
         return cpf;
+    }
+
+    public Endereco getEndereco() {
+        return super.getEndereco();
+    }
+
+    public String getSenha() {
+        return super.getSenha();
     }
 
     public CategoriaLeitor getCategoriaLeitor() {
@@ -83,6 +91,14 @@ public class Leitor extends Pessoa{
         }
     }
 
+    public void setEndereco(Endereco endereco) {
+        super.setEndereco(endereco);
+    }
+
+    public void setSenha(String senha) {
+        super.setSenha(senha);
+    }
+
     public void setCategoriaLeitor(CategoriaLeitor categoriaLeitor) throws Exception{
         if (categoriaLeitor == null) {
             throw new Exception("Erro! A categoria do leitor não pode ser vazio ou zero");
@@ -104,5 +120,6 @@ public class Leitor extends Pessoa{
         System.out.println("telefone: "+getTelefone());
         System.out.println("documento: "+getCpf().getValue());
         System.out.println("Categoria do Leitor: " +categoriaLeitor.getTipo());
+        System.out.println("senha: "+getSenha());
     }
 }

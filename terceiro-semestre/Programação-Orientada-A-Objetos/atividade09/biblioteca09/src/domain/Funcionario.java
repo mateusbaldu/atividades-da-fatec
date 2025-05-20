@@ -1,14 +1,14 @@
-package dominio;
+package domain;
 
-import atributes.Cpf;
-import atributes.Endereco;
+import services.Cpf;
+import services.Endereco;
 
 public class Funcionario extends Pessoa{
     private String cargo;
 
     public Funcionario(long codigo, String nome, String email, String telefone,
-                       Cpf cpf, String cargo, Endereco endereco) throws Exception{
-        super(codigo, nome, email, telefone, cpf, endereco);
+                       Cpf cpf, String cargo, Endereco endereco, String senha) throws Exception{
+        super(codigo, nome, email, telefone, cpf, endereco, senha);
         this.setCargo(cargo);
     }
 
@@ -41,6 +41,10 @@ public class Funcionario extends Pessoa{
 
     public Endereco getEndereco() {
         return super.getEndereco();
+    }
+
+    public String getSenha() {
+        return super.getSenha();
     }
 
     public String getCargo() {
@@ -94,12 +98,16 @@ public class Funcionario extends Pessoa{
         this.endereco = endereco;
     }
 
-    public void setCargo(String cargo) throws Exception{
+    public void setCargo(String cargo) throws Exception {
         if (cargo == null || cargo.isEmpty()) {
             throw new Exception("Erro! Esse campo não pode ser vazio");
         } else {
             this.cargo = cargo;
         }
+    }
+
+    public void setSenha(String senha) {
+        super.setSenha(senha);
     }
 
 
@@ -112,6 +120,7 @@ public class Funcionario extends Pessoa{
         System.out.println("Endereco: "+getEndereco().getValue());
         System.out.println("documento: "+ getCpf().getValue());
         System.out.println("cargo: "+getCargo());
+        System.out.println("senha: "+getSenha());
     }
 
     public void gerenciaObra(CategoriaObra categoriaObra) throws Exception{

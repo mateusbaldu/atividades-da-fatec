@@ -1,4 +1,4 @@
-package atributes;
+package services;
 
 public class Endereco {
     private String logradouro;

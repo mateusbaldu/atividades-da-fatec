@@ -1,4 +1,4 @@
-package atributes;
+package services;
 
 public class Cpf {
     private String cpf;

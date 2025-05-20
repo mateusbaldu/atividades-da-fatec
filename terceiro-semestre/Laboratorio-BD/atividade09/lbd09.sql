@@ -22,8 +22,9 @@ create table funcionario (
     telefone varchar(30),
     cidade varchar(100),
     logradouro varchar(100),
-    cep char(8),
-    senha varchar(100)
+    cep char(9),
+    senha varchar(100),
+    cargo varchar(50)
 );
 
 create table leitor (
@@ -34,7 +35,7 @@ create table leitor (
     telefone varchar(30),
     cidade varchar(100),
     logradouro varchar(100),
-    cep char(8),
+    cep char(9),
     senha varchar(100),
     categorialeitor int
 );
@@ -101,15 +102,15 @@ insert into categoriaobra (codigo, nome) values
 (33, 'Mangá de ação'),
 (34, 'Mangá coreano de ação');
 
-insert into funcionario (codigo, nome, documento, email, telefone, cidade, logradouro, cep, senha) values 
-(1, 'Mateus Balduíno', '012.345.678-99', 'mateusficticio@email.com', '11912344321', 'São Paulo', 'Rua Ficticia, 1', '01234000', '123456'),
-(2, 'Vitor Dahora', '333.345.678-99', 'vitorficticio@email.com', '11912341111', 'São Paulo', 'Rua Ficticia, 2', '01234000', '123456'),
-(3, 'Gabriel Ribeiro', '012.444.678-99', 'gabrielficticio@email.com', '11977774321', 'São Paulo', 'Rua Ficticia, 8', '01234001', '123456');
+insert into funcionario (codigo, nome, documento, email, telefone, cidade, logradouro, cep, senha, cargo) values
+(1, 'Mateus Balduíno', '012.345.678-99', 'mateusficticio@email.com', '11912344321', 'São Paulo', 'Rua Ficticia, 1', '01234-000', '123456', 'Bibliotecario'),
+(2, 'Vitor Dahora', '333.345.678-99', 'vitorficticio@email.com', '11912341111', 'São Paulo', 'Rua Ficticia, 2', '01234-000', '123456',  'Bibliotecario'),
+(3, 'Gabriel Ribeiro', '012.444.678-99', 'gabrielficticio@email.com', '11977774321', 'São Paulo', 'Rua Ficticia, 8', '01234-001', '123456',  'Bibliotecario');
 
 insert into leitor (codigo, nome, documento, email, telefone, cidade, logradouro, cep, senha, categorialeitor) values 
-(1, 'Luccas Miguel', '012.345.876-99', 'luccasficticio@email.com', '11912347721', 'São Paulo', 'Rua Ficticia, 6', '01234000', '123456', 1),
-(2, 'Miguel Henrique', '111.345.678-99', 'miguelficticio@email.com', '11912888321', 'São Paulo', 'Rua Ficticia, 22', '01234001', '123456', 2),
-(3, 'Pedro Dantas', '012.345.222-99', 'pedroficticio@email.com', '11977884321', 'São Paulo', 'Rua Ficticia, 23', '01234001', '123456', 3);
+(1, 'Luccas Miguel', '012.345.876-99', 'luccasficticio@email.com', '11912347721', 'São Paulo', 'Rua Ficticia, 6', '01234-000', '123456', 1),
+(2, 'Miguel Henrique', '111.345.678-99', 'miguelficticio@email.com', '11912888321', 'São Paulo', 'Rua Ficticia, 22', '01234-001', '123456', 2),
+(3, 'Pedro Dantas', '012.345.222-99', 'pedroficticio@email.com', '11977884321', 'São Paulo', 'Rua Ficticia, 23', '01234-001', '123456', 3);
 
 insert into obra (codigo, titulo, autor, isbn, editora, ano, sinopse, palavraschave, categoriaobra) values 
 (1, 'Crepusculo', 'random', '34588-9888C', 'Crepusculo FC', '2009', 'insira texto', 'vampiro', 1),

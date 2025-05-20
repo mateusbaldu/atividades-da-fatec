@@ -1,4 +1,4 @@
-package dominio;
+package domain;
 
 public class Copia {
     private int codigo;
@@ -70,7 +70,7 @@ public class Copia {
 
     public void mostrar() {
         System.out.println("\n-----Copia-----");
-        System.out.println("\nNome da obra: " + obra.getTitulo());
+        System.out.println("Nome da obra: " + obra.getTitulo());
         System.out.println("codigo: "+getCodigo());
         System.out.println("situação: "+getSituacao());
         System.out.println("descritivo: "+getDescritivo());
