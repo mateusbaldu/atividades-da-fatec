@@ -13,6 +13,7 @@ public class Emprestimo {
     private Leitor codigoLeitor;
     private Funcionario codigoFuncionario;
 
+
     public Emprestimo(int codigo, LocalDate dataEmprestimo, LocalDate dataPrevista,
                       LocalDate dataDevolvida, double multa, String situacao,
                       Copia codigoCopia, Leitor codigoLeitor, Funcionario codigoFuncionario) throws Exception{
@@ -143,6 +144,7 @@ public class Emprestimo {
     public void carregar() {}
     public void devolver() {}
     public void listar() {}
+
 
     public void mostrar() {
         System.out.println("\n-----Emprestimo-----");

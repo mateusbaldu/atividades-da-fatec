@@ -91,12 +91,18 @@ public class Leitor extends Pessoa{
         }
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(Endereco endereco) throws Exception {
+        if (endereco == null || endereco.getValue().isEmpty()) {
+            throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
+        }
         super.setEndereco(endereco);
     }
 
-    public void setSenha(String senha) {
-        super.setSenha(senha);
+    public void setSenha(String senha) throws Exception {
+        if ((senha.length() < 6)) {
+            throw new IllegalArgumentException("Erro! A senha deve possuir 6 ou mais caractéres");
+        }
+        this.senha = senha;
     }
 
     public void setCategoriaLeitor(CategoriaLeitor categoriaLeitor) throws Exception{

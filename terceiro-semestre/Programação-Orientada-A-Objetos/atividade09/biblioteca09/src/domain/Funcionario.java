@@ -91,11 +91,11 @@ public class Funcionario extends Pessoa{
         }
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(Endereco endereco) throws Exception {
         if (endereco == null || endereco.getValue().isEmpty()) {
             throw new IllegalArgumentException("Erro! Esse campo não pode ser vazio");
         }
-        this.endereco = endereco;
+        super.setEndereco(endereco);
     }
 
     public void setCargo(String cargo) throws Exception {
@@ -106,7 +106,10 @@ public class Funcionario extends Pessoa{
         }
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(String senha) throws Exception {
+        if ((senha.length() < 6)) {
+            throw new IllegalArgumentException("Erro! A senha deve possuir 6 ou mais caractéres");
+        }
         super.setSenha(senha);
     }
 

@@ -23,6 +23,7 @@ public class Endereco {
         return cep;
     }
 
+
     public void setLogradouro(String logradouro) {
         this.logradouro = logradouro;
     }
@@ -30,6 +31,7 @@ public class Endereco {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
+
 
     public void validateCep(String cep) {
         if ((cep.length() != 8) && (!cep.contains("-"))) {

@@ -75,14 +75,11 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(Endereco endereco) throws Exception {
         this.endereco = endereco;
     }
 
-    public void setSenha(String senha) {
-        if ((senha.length() < 6)) {
-            throw new IllegalArgumentException("Erro! A senha deve possuir 6 ou mais caractéres");
-        }
+    public void setSenha(String senha) throws Exception {
         this.senha = senha;
     }
 
