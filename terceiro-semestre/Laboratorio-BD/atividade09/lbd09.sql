@@ -310,3 +310,8 @@ begin
 	old.leitor, old.copia, old.funcionario), now());
 end $$
 delimiter ;
+
+select * from funcionario;
+delete from funcionario where nome = 'Miguel Silva';
+select * from leitor;
+delete from leitor where nome = 'Mateus Balduino';
