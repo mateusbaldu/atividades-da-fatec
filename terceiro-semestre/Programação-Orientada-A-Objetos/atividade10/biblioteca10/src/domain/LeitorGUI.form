@@ -240,6 +240,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Selecione..."/>
             <item value="Aluno"/>
             <item value="Professor"/>
             <item value="Visitante"/>

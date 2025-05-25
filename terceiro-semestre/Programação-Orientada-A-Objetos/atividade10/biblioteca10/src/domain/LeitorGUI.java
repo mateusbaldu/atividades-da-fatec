@@ -86,7 +86,7 @@ public class LeitorGUI extends JFrame{
         textLogradouro.setText("");
         textCidade.setText("");
         textCEP.setText("");
-        textTipoCategoria.setAction(null);
+        textTipoCategoria.setSelectedIndex(0);
         textCPF.setText("");
         textSenha.setText("");
         textDiasCategoria.setText("");
