@@ -23,7 +23,7 @@ public abstract class Pessoa {
         this.setSenha(senha);
     }
 
-    public Pessoa() throws Exception{}
+    public Pessoa(){}
 
 
     public long getCodigo() {
@@ -51,7 +51,7 @@ public abstract class Pessoa {
     }
 
     public String getSenha() {
-        return "**********";
+        return senha;
     }
 
 

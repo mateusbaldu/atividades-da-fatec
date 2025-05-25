@@ -9,6 +9,10 @@ public abstract class Categoria {
         this.setTipo(tipo);
     }
 
+    public Categoria(int codigo) {
+        this.codigo = codigo;
+    }
+
     public Categoria() throws Exception{
     }
 

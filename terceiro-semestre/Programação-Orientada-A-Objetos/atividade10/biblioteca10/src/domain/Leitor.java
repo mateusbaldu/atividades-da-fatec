@@ -15,7 +15,7 @@ public class Leitor extends Pessoa{
         this.setCategoriaLeitor(categoriaLeitor);
     }
 
-    public Leitor() throws Exception {
+    public Leitor(){
     }
 
 

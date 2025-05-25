@@ -10,11 +10,9 @@ public class Cpf {
     }
 
     public void validateCpf(String cpf) {
-        if (cpf == null) {
-            throw new IllegalArgumentException("Erro! O CPF não pode ser nulo");
-        }
-        if (cpf.length() != 14) {
-            throw new IllegalArgumentException("Erro! CPF invalido");
+        String regex = "^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$";
+        if (!cpf.matches(regex)) {
+            throw new IllegalArgumentException("Erro: CPF invalido!");
         }
     }
 
@@ -32,5 +30,9 @@ public class Cpf {
         String parteQuatro = this.cpf.substring(9);
 
         return parteUm + "." + parteDois + "." + parteTres + "." + parteQuatro;
+    }
+
+    public String getCpfOnlyNumbers() {
+        return this.cpf;
     }
 }

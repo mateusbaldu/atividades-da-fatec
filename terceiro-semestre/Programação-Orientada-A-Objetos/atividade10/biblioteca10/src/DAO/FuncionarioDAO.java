@@ -1,11 +1,12 @@
 package DAO;
 
-import domain.*;
+import domain.CategoriaObra;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class FuncionarioDAO {
-    public void inserir(Funcionario funcionario) throws Exception {
+    public void inserir(CategoriaObra.Funcionario funcionario) throws Exception {
         Connection conn = ConnectionTest.getConnection();
 
         String comandoSQL = """

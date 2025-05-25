@@ -11,12 +11,12 @@ public class Emprestimo {
     private String situacao;
     private Copia codigoCopia;
     private Leitor codigoLeitor;
-    private Funcionario codigoFuncionario;
+    private CategoriaObra.Funcionario codigoFuncionario;
 
 
     public Emprestimo(int codigo, LocalDate dataEmprestimo, LocalDate dataPrevista,
                       LocalDate dataDevolvida, double multa, String situacao,
-                      Copia codigoCopia, Leitor codigoLeitor, Funcionario codigoFuncionario) throws Exception{
+                      Copia codigoCopia, Leitor codigoLeitor, CategoriaObra.Funcionario codigoFuncionario) throws Exception{
         this.setCodigo(codigo);
         this.setDataEmprestimo(dataEmprestimo);
         this.setDataPrevista(dataPrevista);
@@ -55,7 +55,7 @@ public class Emprestimo {
         return situacao;
     }
 
-    public Funcionario getCodigoFuncionario() {
+    public CategoriaObra.Funcionario getCodigoFuncionario() {
         return codigoFuncionario;
     }
 
@@ -131,7 +131,7 @@ public class Emprestimo {
         }
     }
 
-    public void setCodigoFuncionario(Funcionario codigoFuncionario) throws Exception{
+    public void setCodigoFuncionario(CategoriaObra.Funcionario codigoFuncionario) throws Exception{
         if (codigoFuncionario.getCodigo() <= 0) {
             throw new Exception("Erro! O código do funcionário não pode ser negativo ou zero");
         } else {

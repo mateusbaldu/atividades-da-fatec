@@ -33,12 +33,15 @@ public class Endereco {
     }
 
 
-    public void validateCep(String cep) {
-        if ((cep.length() != 8) && (!cep.contains("-"))) {
-            throw new IllegalArgumentException("Erro! CEP invalido");
+    public void validateCep(String input) {
+        if (input == null) {
+            throw new IllegalArgumentException("Erro: CPF invalido!");
         }
-        this.cep = cep;
+        if (input.contains(".") && input.contains("-")) {
+            this.cep = input.replaceAll("[^0-9]", "");
+        }
     }
+
 
     public String getValue() {
         return "logradouro: " + logradouro + " | " +

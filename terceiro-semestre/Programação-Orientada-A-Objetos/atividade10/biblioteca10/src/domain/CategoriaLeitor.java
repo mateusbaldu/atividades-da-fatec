@@ -1,10 +1,11 @@
 package domain;
 
 public class CategoriaLeitor extends Categoria{
+    public int dias;
 
-    public CategoriaLeitor(int codigo, String tipo) throws Exception {
+    public CategoriaLeitor(int codigo) throws Exception{
         setCodigo(codigo);
-        setTipo(tipo);
+        validarCategoria();
     }
 
     public CategoriaLeitor() throws Exception{}
@@ -14,11 +15,6 @@ public class CategoriaLeitor extends Categoria{
         return codigo;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-
     public void setCodigo(int codigo) throws Exception{
         if (codigo <= 0) {
             throw new Exception("Erro! O código não pode ser negativo ou zero");
@@ -27,18 +23,35 @@ public class CategoriaLeitor extends Categoria{
         }
     }
 
-    public void setTipo(String tipo) throws Exception{
-        if (tipo == null || tipo.isEmpty()) {
-            throw new Exception("Erro! Esse campo não pode ser vazio");
-        } else {
-            this.tipo = tipo;
-        }
+    public void setDias(int dias) throws Exception{
+        this.dias = dias;
     }
 
 
+    public void validarCategoria() throws Exception{
+        switch (getCodigo()) {
+            case (1):
+                setTipo("Aluno");
+                setDias(3);
+                break;
+
+            case (2):
+                setTipo("Professor");
+                setDias(4);
+                break;
+
+            case (3):
+                setTipo("Visitante");
+                setDias(5);
+                break;
+
+            default:
+                break;
+        }
+    }
+
     public void guardar() {}
     public void carregar() {}
-
 
     public void mostrar() {
         System.out.println("\n-----Categoria do Leitor-----");
