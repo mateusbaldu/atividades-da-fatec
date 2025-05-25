@@ -195,7 +195,7 @@
           </grid>
         </constraints>
         <properties>
-          <echoChar value="#"/>
+          <echoChar value="*"/>
           <text value=""/>
           <toolTipText value=""/>
         </properties>
