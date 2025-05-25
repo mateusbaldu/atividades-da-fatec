@@ -17,7 +17,7 @@ public class LeitorGUI extends JFrame{
     private JFormattedTextField textTelefone;
     private JFormattedTextField textCPF;
     private JPasswordField textSenha;
-    private JTextField textTipoCategoria;
+    private JComboBox textTipoCategoria;
     private JTextField textLogradouro;
     private JTextField textCidade;
     private JTextField textCEP;
@@ -43,8 +43,7 @@ public class LeitorGUI extends JFrame{
                     objeto.setTelefone(textTelefone.getText().replaceAll("[^0-9]", ""));
                     objeto.setSenha(new String(textSenha.getPassword()));
 
-                    CategoriaLeitor categoriaLeitor = new CategoriaLeitor(
-                            Integer.parseInt(textCodigoCategoria.getText()));
+                    CategoriaLeitor categoriaLeitor = new CategoriaLeitor(textTipoCategoria.getSelectedItem().toString());
                     objeto.setCategoriaLeitor(categoriaLeitor);
                     preencherCamposCategoria(categoriaLeitor);
 
@@ -87,7 +86,7 @@ public class LeitorGUI extends JFrame{
         textLogradouro.setText("");
         textCidade.setText("");
         textCEP.setText("");
-        textTipoCategoria.setText("");
+        textTipoCategoria.setAction(null);
         textCPF.setText("");
         textSenha.setText("");
         textDiasCategoria.setText("");
@@ -97,17 +96,17 @@ public class LeitorGUI extends JFrame{
     public void preencherCamposCategoria(CategoriaLeitor categoriaLeitor) {
         switch (categoriaLeitor.getCodigo()) {
             case 1:
-                textTipoCategoria.setText("Aluno");
+                textCodigoCategoria.setText(Integer.toString(categoriaLeitor.getCodigo()));
                 textDiasCategoria.setText("3");
                 break;
 
             case 2:
-                textTipoCategoria.setText("Professor");
+                textCodigoCategoria.setText(Integer.toString(categoriaLeitor.getCodigo()));
                 textDiasCategoria.setText("4");
                 break;
 
             case 3:
-                textTipoCategoria.setText("Visitante");
+                textCodigoCategoria.setText(Integer.toString(categoriaLeitor.getCodigo()));
                 textDiasCategoria.setText("5");
                 break;
         }

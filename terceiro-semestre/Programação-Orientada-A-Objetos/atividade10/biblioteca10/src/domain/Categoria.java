@@ -13,6 +13,10 @@ public abstract class Categoria {
         this.codigo = codigo;
     }
 
+    public Categoria(String tipo) {
+        this.tipo = tipo;
+    }
+
     public Categoria() throws Exception{
     }
 

@@ -3,16 +3,20 @@ package domain;
 public class CategoriaLeitor extends Categoria{
     public int dias;
 
-    public CategoriaLeitor(int codigo) throws Exception{
-        setCodigo(codigo);
-        validarCategoria();
+    public CategoriaLeitor(String tipo) throws Exception{
+        setTipo(tipo);
+        validarCategoria(tipo);
     }
 
     public CategoriaLeitor() throws Exception{}
 
 
     public int getCodigo() {
-        return codigo;
+        return this.codigo;
+    }
+
+    public String getTipo() {
+        return this.tipo;
     }
 
     public void setCodigo(int codigo) throws Exception{
@@ -28,20 +32,20 @@ public class CategoriaLeitor extends Categoria{
     }
 
 
-    public void validarCategoria() throws Exception{
-        switch (getCodigo()) {
-            case (1):
-                setTipo("Aluno");
+    public void validarCategoria(String tipo) throws Exception{
+        switch (getTipo()) {
+            case ("Aluno"):
+                setCodigo(1);
                 setDias(3);
                 break;
 
-            case (2):
-                setTipo("Professor");
+            case ("Professor"):
+                setCodigo(2);
                 setDias(4);
                 break;
 
-            case (3):
-                setTipo("Visitante");
+            case ("Visitante"):
+                setCodigo(3);
                 setDias(5);
                 break;
 
