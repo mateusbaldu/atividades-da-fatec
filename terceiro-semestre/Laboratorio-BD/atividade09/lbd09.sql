@@ -314,5 +314,5 @@ delimiter ;
 select * from funcionario;
 delete from funcionario where nome = 'Miguel Silva';
 select * from leitor;
-delete from leitor where nome = 'Lucas Marques';
+delete from leitor where nome = 'Norton Barros';
 
